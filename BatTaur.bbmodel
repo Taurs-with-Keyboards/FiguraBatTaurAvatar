@@ -195,7 +195,7 @@
 			"render_order": "default",
 			"allow_mirror_modeling": true,
 			"from": [-5, -8, 0],
-			"to": [5, 8, 1],
+			"to": [5, 8, 0],
 			"autouv": 0,
 			"color": 0,
 			"origin": [0, 0, 0],
@@ -206,24 +206,24 @@
 					"texture": 0
 				},
 				"east": {
-					"uv": [0, 35, 1, 51],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"south": {
-					"uv": [12, 35, 22, 51],
+					"uv": [11, 35, 1, 51],
 					"texture": 0
 				},
 				"west": {
-					"uv": [11, 35, 12, 51],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"up": {
-					"uv": [11, 35, 1, 34],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"down": {
-					"uv": [21, 34, 11, 35],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				}
 			},
 			"type": "cube",
@@ -238,7 +238,7 @@
 			"render_order": "default",
 			"allow_mirror_modeling": true,
 			"from": [2, 7, 1.5],
-			"to": [12, 23, 2.5],
+			"to": [12, 23, 1.5],
 			"autouv": 0,
 			"color": 0,
 			"origin": [0, 0, 0],
@@ -249,24 +249,24 @@
 					"texture": 0
 				},
 				"east": {
-					"uv": [42, 1, 43, 17],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"south": {
-					"uv": [54, 1, 64, 17],
+					"uv": [53, 1, 43, 17],
 					"texture": 0
 				},
 				"west": {
-					"uv": [53, 1, 54, 17],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"up": {
-					"uv": [53, 1, 43, 0],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"down": {
-					"uv": [63, 0, 53, 1],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				}
 			},
 			"type": "cube",
@@ -281,7 +281,7 @@
 			"render_order": "default",
 			"allow_mirror_modeling": true,
 			"from": [12, 10, 1.5],
-			"to": [20, 22, 2.5],
+			"to": [20, 22, 1.5],
 			"autouv": 0,
 			"color": 0,
 			"origin": [0, 0, 0],
@@ -292,24 +292,24 @@
 					"texture": 0
 				},
 				"east": {
-					"uv": [24, 17, 25, 29],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"south": {
-					"uv": [34, 17, 42, 29],
+					"uv": [33, 17, 25, 29],
 					"texture": 0
 				},
 				"west": {
-					"uv": [33, 17, 34, 29],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"up": {
-					"uv": [33, 17, 25, 16],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"down": {
-					"uv": [41, 16, 33, 17],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				}
 			},
 			"type": "cube",
@@ -324,7 +324,7 @@
 			"render_order": "default",
 			"allow_mirror_modeling": true,
 			"from": [-12, 7, 1.5],
-			"to": [-2, 23, 2.5],
+			"to": [-2, 23, 1.5],
 			"autouv": 0,
 			"color": 0,
 			"mirror_uv": true,
@@ -336,24 +336,24 @@
 					"texture": 0
 				},
 				"east": {
-					"uv": [54, 1, 53, 17],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"south": {
-					"uv": [64, 1, 54, 17],
+					"uv": [43, 1, 53, 17],
 					"texture": 0
 				},
 				"west": {
-					"uv": [43, 1, 42, 17],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"up": {
-					"uv": [43, 1, 53, 0],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"down": {
-					"uv": [53, 0, 63, 1],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				}
 			},
 			"type": "cube",
@@ -368,7 +368,7 @@
 			"render_order": "default",
 			"allow_mirror_modeling": true,
 			"from": [-20, 10, 1.5],
-			"to": [-12, 22, 2.5],
+			"to": [-12, 22, 1.5],
 			"autouv": 0,
 			"color": 0,
 			"mirror_uv": true,
@@ -380,24 +380,24 @@
 					"texture": 0
 				},
 				"east": {
-					"uv": [34, 17, 33, 29],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"south": {
-					"uv": [42, 17, 34, 29],
+					"uv": [25, 17, 33, 29],
 					"texture": 0
 				},
 				"west": {
-					"uv": [25, 17, 24, 29],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"up": {
-					"uv": [25, 17, 33, 16],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"down": {
-					"uv": [33, 16, 41, 17],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				}
 			},
 			"type": "cube",
