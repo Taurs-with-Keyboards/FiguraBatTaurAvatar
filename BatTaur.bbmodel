@@ -2,7 +2,7 @@
 	"meta": {
 		"format_version": "4.10",
 		"model_format": "figura",
-		"box_uv": true
+		"box_uv": false
 	},
 	"visible_box": [1, 1, 0],
 	"variable_placeholders": "",
@@ -16,7 +16,7 @@
 	"elements": [
 		{
 			"name": "Head",
-			"box_uv": true,
+			"box_uv": false,
 			"rescale": false,
 			"locked": false,
 			"light_emission": 0,
@@ -58,7 +58,7 @@
 		},
 		{
 			"name": "rightEar",
-			"box_uv": true,
+			"box_uv": false,
 			"rescale": false,
 			"locked": false,
 			"light_emission": 0,
@@ -101,7 +101,7 @@
 		},
 		{
 			"name": "leftEar",
-			"box_uv": true,
+			"box_uv": false,
 			"rescale": false,
 			"locked": false,
 			"light_emission": 0,
@@ -145,7 +145,7 @@
 		},
 		{
 			"name": "body",
-			"box_uv": true,
+			"box_uv": false,
 			"rescale": false,
 			"locked": false,
 			"light_emission": 0,
@@ -188,7 +188,7 @@
 		},
 		{
 			"name": "body",
-			"box_uv": true,
+			"box_uv": false,
 			"rescale": false,
 			"locked": false,
 			"light_emission": 0,
@@ -231,7 +231,7 @@
 		},
 		{
 			"name": "rightWing",
-			"box_uv": true,
+			"box_uv": false,
 			"rescale": false,
 			"locked": false,
 			"light_emission": 0,
@@ -274,7 +274,7 @@
 		},
 		{
 			"name": "rightWingTip",
-			"box_uv": true,
+			"box_uv": false,
 			"rescale": false,
 			"locked": false,
 			"light_emission": 0,
@@ -317,7 +317,7 @@
 		},
 		{
 			"name": "leftWing",
-			"box_uv": true,
+			"box_uv": false,
 			"rescale": false,
 			"locked": false,
 			"light_emission": 0,
@@ -361,7 +361,7 @@
 		},
 		{
 			"name": "leftWingTip",
-			"box_uv": true,
+			"box_uv": false,
 			"rescale": false,
 			"locked": false,
 			"light_emission": 0,
