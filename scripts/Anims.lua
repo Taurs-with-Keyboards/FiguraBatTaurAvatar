@@ -3,6 +3,7 @@ require("lib.GSAnimBlend")
 require("lib.Molang")
 local parts   = require("lib.PartsAPI")
 local origins = require("lib.OriginsAPI")
+local ground  = require("lib.GroundCheck")
 local pose    = require("scripts.Posing")
 local effects = require("scripts.SyncedVariables")
 
@@ -23,13 +24,14 @@ function events.TICK()
 	-- Variables
 	local pos = player:getPos()
 	local vel = player:getVelocity()
+	local onGround = ground()
 	local block, hitPos = raycast:block(pos, pos + vec(0, 10, 0))
 	
 	-- Origins powers
 	local hasRestPower = origins.hasPower(player, "battaur:ceiling_snoozer_toggle")
 	local restData = origins.getPowerData(player, "battaur:ceiling_snoozer_toggle") or 0
 	
-	-- Stop Rest animation
+	-- Stop rest animation
 	if vel:length() ~= 0 or block:isAir() then
 		rest = false
 	end
@@ -39,7 +41,13 @@ function events.TICK()
 		rest = true
 	end
 	
-	-- Animation
+	-- Animation states
+	local fly = (effects.cF or vel:length() ~= 0 or not onGround) and not rest
+	local land = not fly and not rest
+	
+	-- Animations
+	anims.flying:playing(fly)
+	anims.landed:playing(land)
 	anims.resting:playing(rest)
 	
 end
@@ -79,6 +87,8 @@ end
 
 -- GS Blending Setup
 local blendAnims = {
+	{ anim = anims.flying,  ticks = {3,7}   },
+	{ anim = anims.landed,  ticks = {7,7}   },
 	{ anim = anims.resting, ticks = {20,20} }
 }
 
