@@ -145,7 +145,7 @@
 			"uuid": "9f9876c9-43a8-a5b1-cdbe-25959b2f3a2f"
 		},
 		{
-			"name": "Legs",
+			"name": "Legs_Flat",
 			"box_uv": false,
 			"rescale": false,
 			"locked": false,
@@ -188,7 +188,7 @@
 			"uuid": "4a2c62b3-16dc-5a7b-52fc-e5f3243f00cc"
 		},
 		{
-			"name": "Wing",
+			"name": "Wing_Flat",
 			"box_uv": false,
 			"rescale": false,
 			"locked": false,
@@ -231,7 +231,7 @@
 			"uuid": "b26bd138-6fdf-e893-be61-0b86c4604324"
 		},
 		{
-			"name": "Tip",
+			"name": "Tip_Flat",
 			"box_uv": false,
 			"rescale": false,
 			"locked": false,
@@ -274,7 +274,7 @@
 			"uuid": "3339840e-39d2-4ec9-47ae-695e1cca0ec5"
 		},
 		{
-			"name": "Wing",
+			"name": "Wing_Flat",
 			"box_uv": false,
 			"rescale": false,
 			"locked": false,
@@ -318,7 +318,7 @@
 			"uuid": "adb89af6-b902-6090-8d99-0cc0ced56149"
 		},
 		{
-			"name": "Tip",
+			"name": "Tip_Flat",
 			"box_uv": false,
 			"rescale": false,
 			"locked": false,
