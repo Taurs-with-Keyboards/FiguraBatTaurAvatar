@@ -3,10 +3,9 @@ local s, squapi = pcall(require, "lib.SquAPI")
 if not s then return {} end
 
 -- Required scripts
-local parts   = require("lib.PartsAPI")
-local lerp    = require("lib.LerpAPI")
-local pose    = require("scripts.Posing")
-local effects = require("scripts.SyncedVariables")
+local parts = require("lib.PartsAPI")
+local lerp  = require("lib.LerpAPI")
+local pose  = require("scripts.Posing")
 
 -- Animation setup
 local anims = animations.BatTaur
@@ -61,6 +60,10 @@ local head = squapi.smoothHead:new(
 	false -- Keep Original Head Pos (false)
 )
 
+-- Head strength variables
+local headStrength = {table.unpack(head.strength)}
+local headTilt     = head.tilt
+
 -- Squishy vanilla arms
 local leftArm = squapi.arm:new(
 	parts.group.LeftArm,
@@ -110,6 +113,12 @@ function events.TICK()
 	
 	-- Control ear flick based on variables
 	ears.doEarFlick = earFlick
+	
+	-- Control lean based on resting
+	for i in ipairs(head.strength) do
+		head.strength[i] = anims.resting:isPlaying() and -headStrength[i] or headStrength[i]
+	end
+	head.tilt = anims.resting:isPlaying() and -headTilt     or headTilt
 	
 end
 

@@ -1766,9 +1766,9 @@
 							"channel": "rotation",
 							"data_points": [
 								{
-									"x": "180",
+									"x": "0",
 									"y": "0",
-									"z": "0"
+									"z": "180"
 								}
 							],
 							"uuid": "50333842-5e5f-afbf-32d0-7d2eb1453e3e",
@@ -1781,11 +1781,31 @@
 							"data_points": [
 								{
 									"x": "0",
-									"y": "30",
+									"y": "v.snap",
 									"z": "0"
 								}
 							],
 							"uuid": "02730f8a-f066-f478-b4fd-b9dfe542d069",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						}
+					]
+				},
+				"fb4d71e0-e1cb-67eb-18aa-72526ee98f85": {
+					"name": "Head",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "vanilla_model.HEAD:getOriginRot().x * 2",
+									"y": "vanilla_model.HEAD:getOriginRot().y * 2",
+									"z": "vanilla_model.HEAD:getOriginRot().z * 2"
+								}
+							],
+							"uuid": "84006fb8-07e4-5540-0bdf-9e3062a3ca67",
 							"time": 0,
 							"color": -1,
 							"interpolation": "linear"
