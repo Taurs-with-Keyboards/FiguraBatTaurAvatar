@@ -7,6 +7,12 @@ local itemCheck = require("lib.ItemCheck")
 local s, avatar = pcall(require, "scripts.Player")
 if not s then avatar = {} end
 
+local s, anims = pcall(require, "scripts.Anims")
+if not s then anims = {} end
+
+local s, squapi = pcall(require, "scripts.SquishyAnims")
+if not s then squapi = {} end
+
 local s, c = pcall(require, "scripts.ColorProperties")
 if not s then c = {} end
 
@@ -32,7 +38,8 @@ end
 local pages = {
 	
 	main   = action_wheel:newPage("Main"),
-	avatar = action_wheel:newPage("Avatar")
+	avatar = action_wheel:newPage("Avatar"),
+	anims  = action_wheel:newPage("Anims")
 	
 }
 
@@ -41,7 +48,11 @@ local pageActs = {
 	
 	avatar = action_wheel:newAction()
 		:item(itemCheck("armor_stand"))
-		:onLeftClick(function() descend(pages.avatar) end)
+		:onLeftClick(function() descend(pages.avatar) end),
+	
+	anims = action_wheel:newAction()
+		:item(itemCheck("jukebox"))
+		:onLeftClick(function() descend(pages.anims) end)
 	
 }
 
@@ -52,6 +63,11 @@ function events.RENDER(delta, context)
 		pageActs.avatar
 			:title(toJson(
 				{text = "Avatar Settings", bold = true, color = c.primary}
+			))
+		
+		pageActs.anims
+			:title(toJson(
+				{text = "Animations", bold = true, color = c.primary}
 			))
 		
 		for _, act in pairs(pageActs) do
@@ -77,9 +93,17 @@ action_wheel:setPage(pages.main)
 -- Main actions
 pages.main
 	:action( -1, pageActs.avatar)
+	:action( -1, pageActs.anims)
 
 -- Avatar actions
 pages.avatar
 	:action( -1, avatar.vanillaSkinAct)
 	:action( -1, avatar.modelAct)
+	:action( -1, backAct)
+
+-- Animation actions
+pages.anims
+	:action( -1, anims.restAct)
+	:action( -1, squapi.earsAct)
+	:action( -1, squapi.armsAct)
 	:action( -1, backAct)
