@@ -7,6 +7,9 @@ local itemCheck = require("lib.ItemCheck")
 local s, avatar = pcall(require, "scripts.Player")
 if not s then avatar = {} end
 
+local s, camera = pcall(require, "scripts.CameraControl")
+if not s then camera = {} end
+
 local s, anims = pcall(require, "scripts.Anims")
 if not s then anims = {} end
 
@@ -39,6 +42,7 @@ local pages = {
 	
 	main   = action_wheel:newPage("Main"),
 	avatar = action_wheel:newPage("Avatar"),
+	camera = action_wheel:newPage("Camera"),
 	anims  = action_wheel:newPage("Anims")
 	
 }
@@ -52,7 +56,11 @@ local pageActs = {
 	
 	anims = action_wheel:newAction()
 		:item(itemCheck("jukebox"))
-		:onLeftClick(function() descend(pages.anims) end)
+		:onLeftClick(function() descend(pages.anims) end),
+	
+	camera = action_wheel:newAction()
+		:item(itemCheck("redstone"))
+		:onLeftClick(function() descend(pages.camera) end)
 	
 }
 
@@ -68,6 +76,11 @@ function events.RENDER(delta, context)
 		pageActs.anims
 			:title(toJson(
 				{text = "Animations", bold = true, color = c.primary}
+			))
+		
+		pageActs.camera
+			:title(toJson(
+				{text = "Camera Settings", bold = true, color = c.primary}
 			))
 		
 		for _, act in pairs(pageActs) do
@@ -99,6 +112,13 @@ pages.main
 pages.avatar
 	:action( -1, avatar.vanillaSkinAct)
 	:action( -1, avatar.modelAct)
+	:action( -1, pageActs.camera)
+	:action( -1, backAct)
+
+-- Camera actions
+pages.camera
+	:action( -1, camera.posAct)
+	:action( -1, camera.eyeAct)
 	:action( -1, backAct)
 
 -- Animation actions
