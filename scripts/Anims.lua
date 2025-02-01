@@ -10,8 +10,10 @@ local effects = require("scripts.SyncedVariables")
 -- Animations setup
 local anims = animations.BatTaur
 
--- Variable
-local rest = false
+-- Variables
+local restData = 0
+local isRest = false
+local canRest = false
 
 -- Table setup
 v = {}
@@ -27,35 +29,33 @@ function events.TICK()
 	local onGround = ground()
 	local block, hitPos = raycast:block(pos, pos + vec(0, 10, 0))
 	
-	-- Origins powers
-	local hasRestPower = origins.hasPower(player, "battaur:ceiling_snoozer_toggle")
-	local restData = origins.getPowerData(player, "battaur:ceiling_snoozer_toggle") or 0
+	-- Origins power
+	restData = origins.getPowerData(player, "battaur:ceiling_snoozer_toggle") or 0
+	
+	-- Animation action
+	canRest = vel:length() == 0 and not block:isAir()
 	
 	-- Stop rest animation
-	if vel:length() ~= 0 or block:isAir() then
-		rest = false
-	end
-	
-	-- Start rest animation
-	if restData == 1 then
-		rest = true
+	if not canRest then
+		isRest = false
 	end
 	
 	-- Animation states
-	local fly = (effects.cF or vel:length() ~= 0 or not onGround) and not rest
-	local land = not fly and not rest
+	local resting = restData == 1 or isRest
+	local fly = (effects.cF or vel:length() ~= 0 or not onGround) and not resting
+	local land = not fly and not resting
 	
 	-- Animations
+	anims.resting:playing(resting)
 	anims.flying:playing(fly)
 	anims.landed:playing(land)
-	anims.resting:playing(rest)
 	
 end
 
 function events.RENDER(delta, context)
 	
 	-- Resting variables
-	if rest then
+	if restData == 1 or isRest then
 		
 		-- Variables
 		local pos = player:getPos(delta)
@@ -79,7 +79,7 @@ function events.RENDER(delta, context)
 		local heightOffset = height * modelHeight * playerScale
 		
 		-- Store animation variables
-		v.snap = (hitPos.y - pos.y) * (16 / heightOffset)
+		v.snap = (hitPos.y - pos.y) * (17 / heightOffset)
 		
 	end
 	
@@ -110,7 +110,7 @@ end
 -- Play rest anim
 function pings.animPlayRest()
 	
-	rest = true
+	isRest = true
 	
 end
 
@@ -151,7 +151,11 @@ function events.RENDER(delta, context)
 	if action_wheel:isEnabled() then
 		t.restAct
 			:title(toJson(
-				{text = "Play Rest animation", bold = true, color = c.primary}
+				{
+					"",
+					{text = "Play Rest animation", bold = true, color = c.primary},
+					{text = canRest and "" or "\n\nUnable to rest! Slow down and make sure blocks are above you!", color = "gold"}
+				}
 			))
 		
 		for _, act in pairs(t) do
