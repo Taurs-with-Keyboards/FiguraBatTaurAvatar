@@ -74,19 +74,19 @@ function events.RENDER(delta, context)
 		local offsetScale = vec(width * modelWidth, height * modelHeight, width * modelWidth) * playerScale
 		
 		-- Camera offset
-		local posOffset  = calcMatrix(head):apply(head:getPivot()) / 16
+		local posOffset  = calcMatrix(head):apply(head:getPivot()) / 19
 		local nameOffset = posOffset + vec(0, 0.85, 0)
 		
 		if pose.stand or pose.crouch then
 			
 			-- If standing, lower camera offset
-			posOffset = posOffset - vec(0, 24 * modelEyeHeight, 0) / 16
+			posOffset = posOffset - vec(0, 24 * modelEyeHeight, 0) / 19
 			
 		else
 			
 			-- else, slightly lower camera offset
-			posOffset  = posOffset - vec(0, (pose.sleep and 24 or pose.elytra and 0 or 16), 0) / 16
-			nameOffset = posOffset - vec(0, (pose.sleep and 4 or -4) * modelEyeHeight, -20) / 16
+			posOffset  = posOffset - vec(0, (pose.sleep and 24 or pose.elytra and 0 or 16), 0) / 19
+			nameOffset = posOffset - vec(0, (pose.sleep and 4 or -4) * modelEyeHeight, -20) / 19
 			
 			-- else, rotate camera offset on x axis
 			posOffset  = vectors.rotateAroundAxis(-player:getRot().x - 90, posOffset,  vec(1, 0, 0))
