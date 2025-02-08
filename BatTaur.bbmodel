@@ -2056,7 +2056,7 @@
 		},
 		{
 			"uuid": "d862df91-9197-3109-b03d-e2dd6d9df389",
-			"name": "landed",
+			"name": "groundIdle",
 			"loop": "loop",
 			"override": false,
 			"length": 0,
@@ -2151,7 +2151,7 @@
 								{
 									"x": "0",
 									"y": "0",
-									"z": "-1.5\n"
+									"z": "-1.5"
 								}
 							],
 							"uuid": "22492901-c17e-e31b-448b-250a9774e649",
@@ -2205,7 +2205,7 @@
 								{
 									"x": "0",
 									"y": "0",
-									"z": "-1.5\n"
+									"z": "-1.5"
 								}
 							],
 							"uuid": "b27341e3-48e9-847e-97be-a5365ba7807f",
@@ -2229,6 +2229,143 @@
 								}
 							],
 							"uuid": "f4ed6797-5b40-0495-79d5-637cb6428b10",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						}
+					]
+				}
+			}
+		},
+		{
+			"uuid": "6514989a-075d-0d55-da31-fed8c5fe2c7f",
+			"name": "groundWalk",
+			"loop": "loop",
+			"override": false,
+			"length": 0,
+			"snapping": 24,
+			"selected": false,
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "",
+			"animators": {
+				"09d675bc-2d1d-ef3a-d556-aec3ba2a9660": {
+					"name": "LowerBody",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "q(...) +\nMath.sin(q.anim_time*720)*6",
+									"z": "0"
+								}
+							],
+							"uuid": "2a0e2101-1d76-7697-54e4-8f9d505c6c4e",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						}
+					]
+				},
+				"478f33ce-236d-6b3f-f79a-7c39b06f906b": {
+					"name": "Feet",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "0",
+									"z": "q(...) +\nMath.sin(q.anim_time*720+90)*15"
+								}
+							],
+							"uuid": "bc90d004-518c-5b15-0e49-7f3b7123419b",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						},
+						{
+							"channel": "position",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "q(...) +\nMath.sin(q.anim_time*1440+90)*0.5+0.5",
+									"z": "0"
+								}
+							],
+							"uuid": "a64943d3-9e77-9655-bc45-f113a28d91f0",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						}
+					]
+				},
+				"e80940bc-d9b7-5305-27fb-9d5da5ee07f2": {
+					"name": "LeftWing",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "q(...) +\n-math.pow(Math.sin(q.anim_time*360-90),6)*20",
+									"z": "0"
+								}
+							],
+							"uuid": "753a1ca4-da01-f4bc-9a18-e3da822a4c8f",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						},
+						{
+							"channel": "position",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "q(...) +\nMath.sin(q.anim_time*720)*2",
+									"z": "0"
+								}
+							],
+							"uuid": "12a8fea3-42ea-f5d3-b561-40e4e3e8124b",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						}
+					]
+				},
+				"bf5f1da8-0214-a7ca-f347-0277d88570f5": {
+					"name": "RightWing",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "q(...) +\nmath.pow(Math.sin(q.anim_time*360),6)*20",
+									"z": "0"
+								}
+							],
+							"uuid": "d47ac5b5-7cf1-f3bb-4923-9618517086a5",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						},
+						{
+							"channel": "position",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "q(...) +\n-Math.sin(q.anim_time*720)*2",
+									"z": "0"
+								}
+							],
+							"uuid": "c1679d37-e60d-bb22-6a58-7f2372120ed6",
 							"time": 0,
 							"color": -1,
 							"interpolation": "linear"

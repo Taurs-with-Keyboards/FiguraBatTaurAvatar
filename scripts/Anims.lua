@@ -40,15 +40,21 @@ function events.TICK()
 		isRest = false
 	end
 	
+	-- Animation speeds
+	anims.flying:speed(player:isInWater() and 0.5 or 1)
+	anims.groundWalk:speed(math.min(vel:length() * 4, 2))
+	
 	-- Animation states
+	local flying = (not onGround or effects.cF) and not (restData == 1 or isRest)
+	local groundIdle = onGround and not (effects.cF or restData == 1 or isRest)
+	local groundWalk = groundIdle and vel:length() ~= 0
 	local resting = restData == 1 or isRest
-	local fly = (effects.cF or vel:length() ~= 0 or not onGround) and not resting
-	local land = not fly and not resting
 	
 	-- Animations
+	anims.flying:playing(flying)
+	anims.groundIdle:playing(groundIdle)
+	anims.groundWalk:playing(groundWalk)
 	anims.resting:playing(resting)
-	anims.flying:playing(fly)
-	anims.landed:playing(land)
 	
 end
 
@@ -87,9 +93,10 @@ end
 
 -- GS Blending Setup
 local blendAnims = {
-	{ anim = anims.flying,  ticks = {3,7}   },
-	{ anim = anims.landed,  ticks = {7,7}   },
-	{ anim = anims.resting, ticks = {20,20} }
+	{ anim = anims.flying,     ticks = {3,7}   },
+	{ anim = anims.groundIdle, ticks = {7,7}   },
+	{ anim = anims.groundWalk, ticks = {3,7}   },
+	{ anim = anims.resting,    ticks = {20,20} }
 }
 
 -- Apply GS Blending
