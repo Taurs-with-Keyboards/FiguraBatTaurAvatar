@@ -203,22 +203,28 @@
 			"origin": [0, 33, 2.5],
 			"faces": {
 				"north": {
-					"uv": [1, 1, 11, 17]
+					"uv": [1, 1, 11, 17],
+					"texture": 2
 				},
 				"east": {
-					"uv": [0, 1, 1, 17]
+					"uv": [0, 1, 1, 17],
+					"texture": 2
 				},
 				"south": {
-					"uv": [12, 1, 22, 17]
+					"uv": [12, 1, 22, 17],
+					"texture": 2
 				},
 				"west": {
-					"uv": [11, 1, 12, 17]
+					"uv": [11, 1, 12, 17],
+					"texture": 2
 				},
 				"up": {
-					"uv": [11, 1, 1, 0]
+					"uv": [11, 1, 1, 0],
+					"texture": 2
 				},
 				"down": {
-					"uv": [21, 0, 11, 1]
+					"uv": [21, 0, 11, 1],
+					"texture": 2
 				}
 			},
 			"type": "cube",
@@ -1930,6 +1936,35 @@
 			"uuid": "73c5c2a1-fa84-10d7-69ba-3a4d18f87b36",
 			"relative_path": "textures/bat.png",
 			"source": "data:image/png;base64,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"
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\misc\\cape.png",
+			"name": "cape.png",
+			"folder": "",
+			"namespace": "",
+			"id": "2",
+			"group": "",
+			"width": 64,
+			"height": 32,
+			"uv_width": 64,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "99807f78-18d2-849d-7d76-2b927adba49d",
+			"relative_path": "textures/misc/cape.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAAAAXNSR0IArs4c6QAAAFBJREFUaEPt1QERADAMArHi33SFfOagHBm7+Fv8/hOABsQTQCBeAJ8gAgjEE0AgXgArgAAC8QQQiBfACiCAQDwBBOIFsAIIIBBPAIF4AazAAzJOACHu+VYgAAAAAElFTkSuQmCC"
 		}
 	],
 	"animations": [
