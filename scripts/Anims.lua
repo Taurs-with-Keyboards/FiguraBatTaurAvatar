@@ -26,8 +26,13 @@ function events.TICK()
 	-- Variables
 	local pos = player:getPos()
 	local vel = player:getVelocity()
+	local dir = player:getLookDir()
 	local onGround = ground()
 	local block, hitPos = raycast:block(pos, pos + vec(0, 10, 0))
+	
+	-- Directional velocity
+	local fbVel = player:getVelocity():dot((dir.x_z):normalize())
+	local lrVel = player:getVelocity():cross(dir.x_z:normalize()).y
 	
 	-- Origins power
 	restData = origins.getPowerData(player, "battaur:ceiling_snoozer_toggle") or 0
@@ -42,7 +47,7 @@ function events.TICK()
 	
 	-- Animation speeds
 	anims.flying:speed(player:isInWater() and 0.5 or 1)
-	anims.groundWalk:speed(math.min(vel:length() * 4, 2))
+	anims.groundWalk:speed(math.clamp(fbVel < -0.05 and math.min(fbVel, math.abs(lrVel)) * 4 or math.max(fbVel, math.abs(lrVel)) * 4, -2, 2))
 	
 	-- Animation states
 	local flying = (not onGround or effects.cF) and not (restData == 1 or isRest)
