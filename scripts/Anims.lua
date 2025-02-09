@@ -38,7 +38,7 @@ function events.TICK()
 	restData = origins.getPowerData(player, "battaur:ceiling_snoozer_toggle") or 0
 	
 	-- Animation action
-	canRest = vel:length() == 0 and not block:isAir()
+	canRest = vel:length() < 0.05 and not block:isAir()
 	
 	-- Stop rest animation
 	if not canRest then
