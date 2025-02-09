@@ -126,6 +126,13 @@ function pings.animPlayRest()
 	
 end
 
+-- Sync variables
+function pings.syncAnims(a)
+	
+	isRest = a
+	
+end
+
 -- Host only instructions
 if not host:isHost() then return end
 
@@ -133,6 +140,15 @@ if not host:isHost() then return end
 local itemCheck = require("lib.ItemCheck")
 local s, c = pcall(require, "scripts.ColorProperties")
 if not s then c = {} end
+
+-- Sync on tick
+function events.TICK()
+	
+	if world.getTime() % 200 == 0 then
+		pings.syncAnims(isRest)
+	end
+	
+end
 
 -- Rest keybind
 local restBind   = config:load("AnimRestKeybind") or "key.keyboard.keypad.1"
