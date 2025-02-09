@@ -119,10 +119,10 @@ function events.RENDER(delta, context)
 	
 end
 
--- Play rest anim
-function pings.animPlayRest()
+-- Toggle rest anim
+function pings.animPlayRest(boolean)
 	
-	isRest = true
+	isRest = boolean
 	
 end
 
@@ -152,7 +152,7 @@ end
 
 -- Rest keybind
 local restBind   = config:load("AnimRestKeybind") or "key.keyboard.keypad.1"
-local setRestKey = keybinds:newKeybind("Rest Animation"):onPress(pings.animPlayRest):key(restBind)
+local setRestKey = keybinds:newKeybind("Rest Animation"):onPress(function() pings.animPlayRest(not isRest) end):key(restBind)
 
 -- Keybind updater
 function events.TICK()
@@ -171,7 +171,7 @@ local t = {}
 -- Action
 t.restAct = action_wheel:newAction()
 	:item(itemCheck("black_bed"))
-	:onLeftClick(pings.animPlayRest)
+	:onToggle(pings.animPlayRest)
 
 -- Update action
 function events.RENDER(delta, context)
@@ -185,9 +185,10 @@ function events.RENDER(delta, context)
 					{text = canRest and "" or "\n\nUnable to rest! Slow down and make sure blocks are above you!", color = "gold"}
 				}
 			))
+			:toggled(isRest)
 		
 		for _, act in pairs(t) do
-			act:hoverColor(c.hover)
+			act:hoverColor(c.hover):toggleColor(c.active)
 		end
 		
 	end
