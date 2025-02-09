@@ -1312,6 +1312,813 @@
 			},
 			"type": "cube",
 			"uuid": "86238082-e335-7357-a366-660a230d4c9f"
+		},
+		{
+			"name": "Boot",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4.5, 0, 0],
+			"to": [4.5, 6, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [16, 16],
+			"faces": {
+				"north": {
+					"uv": [6, 21, 15, 27],
+					"texture": 3
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [15, 21, 24, 27],
+					"texture": 3
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "9a96c650-10d8-27d0-255e-13da75aca90c"
+		},
+		{
+			"name": "BootLeather",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4.5, 0, 0],
+			"to": [4.5, 6, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [16, 16],
+			"faces": {
+				"north": {
+					"uv": [6, 21, 15, 27],
+					"texture": 9
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [15, 21, 24, 27],
+					"texture": 9
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "2a26acd0-432f-f3dc-9b47-078cbd0b3933"
+		},
+		{
+			"name": "BootLeather",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4.5, 0, 0],
+			"to": [4.5, 6, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [16, 16],
+			"faces": {
+				"north": {
+					"uv": [6, 21, 15, 27],
+					"texture": 10
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [15, 21, 24, 27],
+					"texture": 10
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "043a251e-07ac-a533-66ad-ba6615694540"
+		},
+		{
+			"name": "Leggings",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4.5, 6, -3],
+			"to": [4.5, 21, 3],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"faces": {
+				"north": {
+					"uv": [6, 6, 15, 21],
+					"texture": 3
+				},
+				"east": {
+					"uv": [0, 6, 6, 21],
+					"texture": 3
+				},
+				"south": {
+					"uv": [21, 6, 30, 21],
+					"texture": 3
+				},
+				"west": {
+					"uv": [15, 6, 21, 21],
+					"texture": 3
+				},
+				"up": {
+					"uv": [15, 6, 6, 0],
+					"texture": 3
+				},
+				"down": {
+					"uv": [24, 0, 15, 6],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "39cd55ad-65ea-7b5c-3ece-d90024ec2eda"
+		},
+		{
+			"name": "LeggingsLeather",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4.5, 6, -3],
+			"to": [4.5, 21, 3],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"faces": {
+				"north": {
+					"uv": [6, 6, 15, 21],
+					"texture": 9
+				},
+				"east": {
+					"uv": [0, 6, 6, 21],
+					"texture": 9
+				},
+				"south": {
+					"uv": [21, 6, 30, 21],
+					"texture": 9
+				},
+				"west": {
+					"uv": [15, 6, 21, 21],
+					"texture": 9
+				},
+				"up": {
+					"uv": [15, 6, 6, 0],
+					"texture": 9
+				},
+				"down": {
+					"uv": [24, 0, 15, 6],
+					"texture": 9
+				}
+			},
+			"type": "cube",
+			"uuid": "8fb4bf63-b137-60ce-1163-c044a0650988"
+		},
+		{
+			"name": "LeggingsTrim",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4.5, 6, -3],
+			"to": [4.5, 21, 3],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"faces": {
+				"north": {
+					"uv": [6, 6, 15, 21],
+					"texture": 10
+				},
+				"east": {
+					"uv": [0, 6, 6, 21],
+					"texture": 10
+				},
+				"south": {
+					"uv": [21, 6, 30, 21],
+					"texture": 10
+				},
+				"west": {
+					"uv": [15, 6, 21, 21],
+					"texture": 10
+				},
+				"up": {
+					"uv": [15, 6, 6, 0],
+					"texture": 10
+				},
+				"down": {
+					"uv": [24, 0, 15, 6],
+					"texture": 10
+				}
+			},
+			"type": "cube",
+			"uuid": "807cf927-8710-a10d-de06-4a12409c00c5"
+		},
+		{
+			"name": "Leggings",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-10.5, 6, 0],
+			"to": [-4.5, 21, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [12, 7],
+			"faces": {
+				"north": {
+					"uv": [54, 6, 60, 21],
+					"texture": 3
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [96, 6, 102, 21],
+					"texture": 3
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "02985554-6dc6-e52c-b7c5-a8c932c7c4d3"
+		},
+		{
+			"name": "LeggingsLeather",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-10.5, 6, 0],
+			"to": [-4.5, 21, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [12, 7],
+			"faces": {
+				"north": {
+					"uv": [54, 6, 60, 21],
+					"texture": 9
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [96, 6, 102, 21],
+					"texture": 9
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "8fd2d4f9-22bb-594c-0a34-af815a3708ed"
+		},
+		{
+			"name": "LeggingsTrim",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-10.5, 6, 0],
+			"to": [-4.5, 21, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [12, 7],
+			"faces": {
+				"north": {
+					"uv": [54, 6, 60, 21],
+					"texture": 10
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [96, 6, 102, 21],
+					"texture": 10
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "384241de-92b9-8b11-96de-01ce7588d565"
+		},
+		{
+			"name": "Leggings",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-28.5, 3, 0],
+			"to": [-10.5, 27, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [16, 8],
+			"faces": {
+				"north": {
+					"uv": [60, 0, 78, 24],
+					"texture": 3
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [78, 0, 96, 24],
+					"texture": 3
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "477e45d9-1244-50cb-a042-b7e1ad6b3543"
+		},
+		{
+			"name": "LeggingsLeather",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-28.5, 3, 0],
+			"to": [-10.5, 27, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [16, 8],
+			"faces": {
+				"north": {
+					"uv": [60, 0, 78, 24],
+					"texture": 9
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [78, 0, 96, 24],
+					"texture": 9
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "535d15f5-0787-2dae-8d28-50707fad4d2e"
+		},
+		{
+			"name": "LeggingsTrim",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-28.5, 3, 0],
+			"to": [-10.5, 27, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [16, 8],
+			"faces": {
+				"north": {
+					"uv": [60, 0, 78, 24],
+					"texture": 10
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [78, 0, 96, 24],
+					"texture": 10
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "7b78cd98-be89-5c65-8751-873e8b086e71"
+		},
+		{
+			"name": "Leggings",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [4.5, 6, 0],
+			"to": [10.5, 21, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [12, 0],
+			"faces": {
+				"north": {
+					"uv": [48, 6, 54, 21],
+					"texture": 3
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [102, 6, 108, 21],
+					"texture": 3
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "0c69e806-e5d0-1653-eb18-b456c0659472"
+		},
+		{
+			"name": "LeggingsLeather",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [4.5, 6, 0],
+			"to": [10.5, 21, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [12, 0],
+			"faces": {
+				"north": {
+					"uv": [48, 6, 54, 21],
+					"texture": 9
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [102, 6, 108, 21],
+					"texture": 9
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "0ce5ded2-8de8-a9f8-db2c-3f10d0b0112b"
+		},
+		{
+			"name": "LeggingsTrim",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [4.5, 6, 0],
+			"to": [10.5, 21, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [12, 0],
+			"faces": {
+				"north": {
+					"uv": [48, 6, 54, 21],
+					"texture": 10
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [102, 6, 108, 21],
+					"texture": 10
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "a0d7d78f-cf64-8a3e-0d9c-fbdd8a5b6df4"
+		},
+		{
+			"name": "Leggings",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [10.5, 3, 0],
+			"to": [28.5, 27, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [16, 0],
+			"faces": {
+				"north": {
+					"uv": [30, 0, 48, 24],
+					"texture": 3
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [108, 0, 126, 24],
+					"texture": 3
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "ebc8c340-052e-39a2-e1f3-d0a276e8245d"
+		},
+		{
+			"name": "LeggingsLeather",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [10.5, 3, 0],
+			"to": [28.5, 27, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [16, 0],
+			"faces": {
+				"north": {
+					"uv": [30, 0, 48, 24],
+					"texture": 9
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [108, 0, 126, 24],
+					"texture": 9
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "6b2e1ab8-511e-f855-3365-1fa271be8c40"
+		},
+		{
+			"name": "LeggingsTrim",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [10.5, 3, 0],
+			"to": [28.5, 27, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [16, 0],
+			"faces": {
+				"north": {
+					"uv": [30, 0, 48, 24],
+					"texture": 10
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [108, 0, 126, 24],
+					"texture": 10
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "4b3cba47-f5cd-d53f-365d-b7529314b4ac"
 		}
 	],
 	"outliner": [
@@ -1764,6 +2571,20 @@
 						"80a03135-e903-b1ce-7cd8-2c2cc9c11d3f",
 						"cead6b9a-69d4-69ae-35b7-d41e215788af",
 						{
+							"name": "LowerBodyArmorLeggings",
+							"origin": [0, 0, 0],
+							"color": 0,
+							"uuid": "4f6ec86d-d20e-f40a-3186-2f193c340930",
+							"export": true,
+							"mirror_uv": false,
+							"isOpen": false,
+							"locked": false,
+							"visibility": false,
+							"autouv": 0,
+							"selected": false,
+							"children": ["39cd55ad-65ea-7b5c-3ece-d90024ec2eda", "8fb4bf63-b137-60ce-1163-c044a0650988", "807cf927-8710-a10d-de06-4a12409c00c5"]
+						},
+						{
 							"name": "Feet",
 							"origin": [0, 6, 0],
 							"color": 0,
@@ -1775,7 +2596,25 @@
 							"visibility": true,
 							"autouv": 0,
 							"selected": false,
-							"children": ["96b7a226-3ef5-50dd-7e0f-e2c709dc69b7", "219bda96-bc4c-d04a-61c5-17394e3c6413", "8872e4c9-7d18-7330-4956-da78fa8b2fa1"]
+							"children": [
+								"96b7a226-3ef5-50dd-7e0f-e2c709dc69b7",
+								"219bda96-bc4c-d04a-61c5-17394e3c6413",
+								"8872e4c9-7d18-7330-4956-da78fa8b2fa1",
+								{
+									"name": "FeetArmorBoot",
+									"origin": [0, 0, 0],
+									"color": 0,
+									"uuid": "c1adc9de-ac48-9d1b-9a1a-04cb262a4ebe",
+									"export": true,
+									"mirror_uv": false,
+									"isOpen": false,
+									"locked": false,
+									"visibility": false,
+									"autouv": 0,
+									"selected": false,
+									"children": ["9a96c650-10d8-27d0-255e-13da75aca90c", "2a26acd0-432f-f3dc-9b47-078cbd0b3933", "043a251e-07ac-a533-66ad-ba6615694540"]
+								}
+							]
 						},
 						{
 							"name": "LeftWing",
@@ -1793,6 +2632,20 @@
 								"66a3f4ac-ab0b-0101-f2b0-adaa3fa2a5a0",
 								"9cc82fac-2f9c-5261-cecd-36414d10b21b",
 								{
+									"name": "LeftWingArmorLeggings",
+									"origin": [0, 0, 0],
+									"color": 0,
+									"uuid": "c260035d-38b2-7c1c-2f5f-33e243c9f323",
+									"export": true,
+									"mirror_uv": false,
+									"isOpen": false,
+									"locked": false,
+									"visibility": false,
+									"autouv": 0,
+									"selected": false,
+									"children": ["02985554-6dc6-e52c-b7c5-a8c932c7c4d3", "8fd2d4f9-22bb-594c-0a34-af815a3708ed", "384241de-92b9-8b11-96de-01ce7588d565"]
+								},
+								{
 									"name": "LeftWing2",
 									"origin": [-10.5, 21, 0],
 									"color": 0,
@@ -1807,6 +2660,20 @@
 									"children": [
 										"246ccf6e-2625-f058-5aa5-301aba49c362",
 										"e535208e-4a40-36d1-8c29-bc3f68d29c36",
+										{
+											"name": "LeftWing2ArmorLeggings",
+											"origin": [0, 0, 0],
+											"color": 0,
+											"uuid": "c4980a37-517b-d66a-4b31-2e2cdf470c57",
+											"export": true,
+											"mirror_uv": false,
+											"isOpen": false,
+											"locked": false,
+											"visibility": false,
+											"autouv": 0,
+											"selected": false,
+											"children": ["477e45d9-1244-50cb-a042-b7e1ad6b3543", "535d15f5-0787-2dae-8d28-50707fad4d2e", "7b78cd98-be89-5c65-8751-873e8b086e71"]
+										},
 										{
 											"name": "LeftWingGround",
 											"origin": [-22.5, 22, -0.5],
@@ -1841,6 +2708,20 @@
 								"9df19c01-bfa4-eae5-c5c1-f39a5944d071",
 								"28c9025c-f517-aaea-ca5d-a6df723e27df",
 								{
+									"name": "RightWingArmorLeggings",
+									"origin": [0, 0, 0],
+									"color": 0,
+									"uuid": "388f4594-2e4a-e7aa-77d5-9c20fc61ffcd",
+									"export": true,
+									"mirror_uv": false,
+									"isOpen": false,
+									"locked": false,
+									"visibility": false,
+									"autouv": 0,
+									"selected": false,
+									"children": ["0c69e806-e5d0-1653-eb18-b456c0659472", "0ce5ded2-8de8-a9f8-db2c-3f10d0b0112b", "a0d7d78f-cf64-8a3e-0d9c-fbdd8a5b6df4"]
+								},
+								{
 									"name": "RightWing2",
 									"origin": [10.5, 21, 0],
 									"color": 0,
@@ -1855,6 +2736,20 @@
 									"children": [
 										"73f3e153-6d1a-9dad-b8a2-b03ba57044f3",
 										"44666969-27b1-07cf-886d-127edd6d216c",
+										{
+											"name": "RightWing2ArmorLeggings",
+											"origin": [0, 0, 0],
+											"color": 0,
+											"uuid": "aa4d58e4-a6e3-0d21-6dd6-33dd6153f0ea",
+											"export": true,
+											"mirror_uv": false,
+											"isOpen": false,
+											"locked": false,
+											"visibility": false,
+											"autouv": 0,
+											"selected": false,
+											"children": ["ebc8c340-052e-39a2-e1f3-d0a276e8245d", "6b2e1ab8-511e-f855-3365-1fa271be8c40", "4b3cba47-f5cd-d53f-365d-b7529314b4ac"]
+										},
 										{
 											"name": "RightWingGround",
 											"origin": [22.5, 22, -0.5],
@@ -1885,7 +2780,7 @@
 			"folder": "",
 			"namespace": "",
 			"id": "0",
-			"group": "",
+			"group": "ec724407-87a2-26f3-bf75-05ded6b89711",
 			"width": 64,
 			"height": 64,
 			"uv_width": 64,
@@ -1914,7 +2809,7 @@
 			"folder": "",
 			"namespace": "",
 			"id": "1",
-			"group": "",
+			"group": "ec724407-87a2-26f3-bf75-05ded6b89711",
 			"width": 128,
 			"height": 64,
 			"uv_width": 128,
@@ -1943,7 +2838,7 @@
 			"folder": "",
 			"namespace": "",
 			"id": "2",
-			"group": "",
+			"group": "ec724407-87a2-26f3-bf75-05ded6b89711",
 			"width": 64,
 			"height": 32,
 			"uv_width": 64,
@@ -1965,6 +2860,763 @@
 			"uuid": "99807f78-18d2-849d-7d76-2b927adba49d",
 			"relative_path": "textures/misc/cape.png",
 			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAgCAYAAACinX6EAAAAAXNSR0IArs4c6QAAAFBJREFUaEPt1QERADAMArHi33SFfOagHBm7+Fv8/hOABsQTQCBeAJ8gAgjEE0AgXgArgAAC8QQQiBfACiCAQDwBBOIFsAIIIBBPAIF4AazAAzJOACHu+VYgAAAAAElFTkSuQmCC"
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\leatherArmor.png",
+			"name": "leatherArmor.png",
+			"folder": "",
+			"namespace": "",
+			"id": "10",
+			"group": "8dc7d6ac-d29d-10ff-35c0-0b7f2fde7e3a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "deb0f7db-e61b-9f2e-a73b-eeaf4690fe47",
+			"relative_path": "textures/armor/leatherArmor.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\chainmailArmor.png",
+			"name": "chainmailArmor.png",
+			"folder": "",
+			"namespace": "",
+			"id": "6",
+			"group": "8dc7d6ac-d29d-10ff-35c0-0b7f2fde7e3a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "39cb61cb-da1d-be68-0358-9c3cd4f2e56f",
+			"relative_path": "textures/armor/chainmailArmor.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\ironArmor.png",
+			"name": "ironArmor.png",
+			"folder": "",
+			"namespace": "",
+			"id": "9",
+			"group": "8dc7d6ac-d29d-10ff-35c0-0b7f2fde7e3a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "b70dfe97-50e0-939e-b778-3d1249c9ee9d",
+			"relative_path": "textures/armor/ironArmor.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\goldenArmor.png",
+			"name": "goldenArmor.png",
+			"folder": "",
+			"namespace": "",
+			"id": "8",
+			"group": "8dc7d6ac-d29d-10ff-35c0-0b7f2fde7e3a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "7a09aac9-aecb-dcbe-90f7-f2676e76dc90",
+			"relative_path": "textures/armor/goldenArmor.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\diamondArmor.png",
+			"name": "diamondArmor.png",
+			"folder": "",
+			"namespace": "",
+			"id": "7",
+			"group": "8dc7d6ac-d29d-10ff-35c0-0b7f2fde7e3a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "92c9bbd6-268d-a209-300a-b5dc3145eabf",
+			"relative_path": "textures/armor/diamondArmor.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\netheriteArmor.png",
+			"name": "netheriteArmor.png",
+			"folder": "",
+			"namespace": "",
+			"id": "12",
+			"group": "8dc7d6ac-d29d-10ff-35c0-0b7f2fde7e3a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "ced57f63-c9dd-81be-d34d-b927e0e6d1ac",
+			"relative_path": "textures/armor/netheriteArmor.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\leatherOverlay.png",
+			"name": "leatherOverlay.png",
+			"folder": "",
+			"namespace": "",
+			"id": "11",
+			"group": "8dc7d6ac-d29d-10ff-35c0-0b7f2fde7e3a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "6a170f17-f802-2fb1-5ab6-457376125693",
+			"relative_path": "textures/armor/leatherOverlay.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\boltTrim.png",
+			"name": "boltTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "13",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "002fc241-8fba-3170-3871-1000975bd74d",
+			"relative_path": "textures/armor/trims/boltTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\coastTrim.png",
+			"name": "coastTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "14",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "9013f392-7a1c-372a-154e-0c616a449d54",
+			"relative_path": "textures/armor/trims/coastTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\duneTrim.png",
+			"name": "duneTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "15",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "38018434-b2a0-9e18-56e4-fb2f598ea431",
+			"relative_path": "textures/armor/trims/duneTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\eyeTrim.png",
+			"name": "eyeTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "16",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "10ce5b10-f644-6d86-17ad-bb4d20213212",
+			"relative_path": "textures/armor/trims/eyeTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\flowTrim.png",
+			"name": "flowTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "17",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "3f011c28-a3d1-da0f-170a-ee2b7ea643d1",
+			"relative_path": "textures/armor/trims/flowTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\hostTrim.png",
+			"name": "hostTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "18",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "d373b430-e526-7dfe-c04d-7301d0ca1a58",
+			"relative_path": "textures/armor/trims/hostTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\raiserTrim.png",
+			"name": "raiserTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "19",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "6d2020a9-ca26-3d2b-d10b-e226d588e62e",
+			"relative_path": "textures/armor/trims/raiserTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\ribTrim.png",
+			"name": "ribTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "20",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "7d140145-3eaa-b2a9-33ae-719e9e835efb",
+			"relative_path": "textures/armor/trims/ribTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\sentryTrim.png",
+			"name": "sentryTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "21",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "91e53c79-97f1-5c0e-7e6a-aa4d7737f6ed",
+			"relative_path": "textures/armor/trims/sentryTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\shaperTrim.png",
+			"name": "shaperTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "22",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "e71b4cae-6545-e77e-dff3-de0724e8cca0",
+			"relative_path": "textures/armor/trims/shaperTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\silenceTrim.png",
+			"name": "silenceTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "23",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "b8f1fda6-230d-06c3-1dea-0bf7c4ce7045",
+			"relative_path": "textures/armor/trims/silenceTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\snoutTrim.png",
+			"name": "snoutTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "24",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "ae0ab191-8d30-d368-515a-43d905ed41be",
+			"relative_path": "textures/armor/trims/snoutTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\spireTrim.png",
+			"name": "spireTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "25",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "4dbf44dd-dbb6-4e22-ed6f-d84e71e7ef08",
+			"relative_path": "textures/armor/trims/spireTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\tideTrim.png",
+			"name": "tideTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "26",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "e1d29910-9445-af5d-a03d-fec9f50e04a1",
+			"relative_path": "textures/armor/trims/tideTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\vexTrim.png",
+			"name": "vexTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "27",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "9aae8aa7-6c5e-2b66-4ee7-0cd6e41976cd",
+			"relative_path": "textures/armor/trims/vexTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\wardTrim.png",
+			"name": "wardTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "28",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "0ac38e7a-db1b-bd8d-099f-3843c0da0be1",
+			"relative_path": "textures/armor/trims/wardTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\wayfinderTrim.png",
+			"name": "wayfinderTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "29",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "5dcfb68f-522f-77b2-5866-45909c17ef4d",
+			"relative_path": "textures/armor/trims/wayfinderTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		},
+		{
+			"path": "D:\\Total\\OneDrive\\Documents\\Misc Docs\\Video Game Assets\\Modding Assets\\Minecraft Assets\\Figura Avatars\\avatars\\GitHubRepos\\FiguraBatTaurAvatar\\textures\\armor\\trims\\wildTrim.png",
+			"name": "wildTrim.png",
+			"folder": "",
+			"namespace": "",
+			"id": "30",
+			"group": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"width": 128,
+			"height": 32,
+			"uv_width": 128,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "3f3bfb5e-0a8f-d533-043d-e6e32619e39f",
+			"relative_path": "textures/armor/trims/wildTrim.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAAAXNSR0IArs4c6QAAAIdJREFUeF7t1AENAAAMg7DPv+kLKXMAIds12sBo+uCvAPAICqAAcAM4fg9QALgBHL8HKADcAI7fAxQAbgDH7wEKADeA4/cABYAbwPF7gALADeD4PUAB4AZw/B6gAHADOH4PUAC4ARy/BygA3ACO3wMUAG4Ax+8BCgA3gOP3AAWAG8DxewA8gAdibAAhx2MgEgAAAABJRU5ErkJggg=="
+		}
+	],
+	"texture_groups": [
+		{
+			"uuid": "ec724407-87a2-26f3-bf75-05ded6b89711",
+			"material_config": {
+				"color_value": [255, 255, 255, 255],
+				"mer_value": [0, 0, 0],
+				"saved": true
+			},
+			"name": "Main",
+			"is_material": false
+		},
+		{
+			"uuid": "8dc7d6ac-d29d-10ff-35c0-0b7f2fde7e3a",
+			"material_config": {
+				"color_value": [255, 255, 255, 255],
+				"mer_value": [0, 0, 0],
+				"saved": true
+			},
+			"name": "Armor",
+			"is_material": false
+		},
+		{
+			"uuid": "ad80028d-8a38-7415-5b5b-692fdf64a19a",
+			"material_config": {
+				"color_value": [255, 255, 255, 255],
+				"mer_value": [0, 0, 0],
+				"saved": true
+			},
+			"name": "Armor Trims",
+			"is_material": false
 		}
 	],
 	"animations": [
