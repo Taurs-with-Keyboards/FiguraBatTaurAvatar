@@ -4057,6 +4057,164 @@
 			"is_material": false
 		}
 	],
+	"collections": [
+		{
+			"uuid": "cf8d3728-db7d-64b1-1ac0-c2139882f061",
+			"name": "VanillaSkin",
+			"export_codec": "",
+			"export_path": "",
+			"children": [
+				"c3001525-5ea3-3069-8c08-088ea16d1ee3",
+				"d6ce06f5-ae84-69f7-e375-8372f967c7d1",
+				"731a0616-85ab-022b-8285-347d0f846fa2",
+				"66fb04e0-4111-56ab-04f3-15bf2e531bbb",
+				"e0016394-a8ea-1cd3-7403-b1aefb294c7a",
+				"b3097457-d5c4-ec1f-f6f4-1b16afcea5a2",
+				"2441d556-efbf-6989-9546-8bce2f5ad398",
+				"095d0866-1378-7d26-ebf8-d6027c5f3d47",
+				"d13f3e0d-77c6-6a21-1c53-bdd645734a4b",
+				"219e9129-fcec-fed0-1dad-2200a883ccd9",
+				"a75cee7d-b978-b1c7-fef1-b751921f0119",
+				"1200c30c-1ee5-75c5-cb39-a5367b823ccc",
+				"1574c46c-e323-1266-97ee-ead815a682b1",
+				"3cf887ea-771b-25e0-7b5e-58d9779c71de",
+				"e1fdab2a-f034-2028-8d78-c33c1dfc6c36",
+				"cfcc0da4-e0c7-9e57-88c6-0a10e772b09c"
+			],
+			"visibility": false
+		},
+		{
+			"uuid": "8178a272-cf39-3594-052e-0bbf666bcecb",
+			"name": "HatLayer",
+			"export_codec": "",
+			"export_path": "",
+			"children": [
+				"d6ce06f5-ae84-69f7-e375-8372f967c7d1",
+				"5523baf0-6396-51c6-4164-538284c74d44",
+				"86238082-e335-7357-a366-660a230d4c9f",
+				"3cf887ea-771b-25e0-7b5e-58d9779c71de",
+				"cfcc0da4-e0c7-9e57-88c6-0a10e772b09c",
+				"f3675b49-4b3d-6c19-78c6-7b8f527a9f90",
+				"422d0de4-306b-b296-f40d-0d1db15ee0dc"
+			],
+			"visibility": false
+		},
+		{
+			"uuid": "c40a3c44-7857-6f3f-3754-ca1f1d130e82",
+			"name": "JacketLayer",
+			"export_codec": "",
+			"export_path": "",
+			"children": ["66fb04e0-4111-56ab-04f3-15bf2e531bbb", "cead6b9a-69d4-69ae-35b7-d41e215788af"],
+			"visibility": false
+		},
+		{
+			"uuid": "9914ba84-3055-0d9a-91bc-510c987485d8",
+			"name": "LeftSleeveLayer",
+			"export_codec": "",
+			"export_path": "",
+			"children": [
+				"b3097457-d5c4-ec1f-f6f4-1b16afcea5a2",
+				"095d0866-1378-7d26-ebf8-d6027c5f3d47",
+				"9cc82fac-2f9c-5261-cecd-36414d10b21b",
+				"e535208e-4a40-36d1-8c29-bc3f68d29c36"
+			],
+			"visibility": false
+		},
+		{
+			"uuid": "52cf520c-bccd-60a1-c9d2-2f7edfd4c7a8",
+			"name": "RightSleeveLayer",
+			"export_codec": "",
+			"export_path": "",
+			"children": [
+				"219e9129-fcec-fed0-1dad-2200a883ccd9",
+				"1200c30c-1ee5-75c5-cb39-a5367b823ccc",
+				"28c9025c-f517-aaea-ca5d-a6df723e27df",
+				"44666969-27b1-07cf-886d-127edd6d216c"
+			],
+			"visibility": false
+		},
+		{
+			"uuid": "b347f92c-91b0-5638-d12c-103b74d167e1",
+			"name": "LeftPantsLegLayer",
+			"export_codec": "",
+			"export_path": "",
+			"children": ["219bda96-bc4c-d04a-61c5-17394e3c6413"],
+			"visibility": false
+		},
+		{
+			"uuid": "7ce41d12-eeb3-6ddb-4ff7-c8112fd817c6",
+			"name": "RightPantsLegLayer",
+			"export_codec": "",
+			"export_path": "",
+			"children": ["8872e4c9-7d18-7330-4956-da78fa8b2fa1"],
+			"visibility": false
+		},
+		{
+			"uuid": "702c040d-fc93-1bd0-36cc-116c17de27cf",
+			"name": "Cape",
+			"export_codec": "",
+			"export_path": "",
+			"children": ["dc32bd79-ec88-f47e-3e09-14705b4c86f5"],
+			"visibility": false
+		},
+		{
+			"uuid": "8facd65e-4ce7-3a78-74e2-6aeeb0e1680a",
+			"name": "ArmorHelmet",
+			"export_codec": "",
+			"export_path": "",
+			"children": ["97d759c3-8e3b-bfbb-b112-12a34a8e69a0", "f5d9a0d4-83aa-9b57-9431-34b51fc7139a"],
+			"visibility": false
+		},
+		{
+			"uuid": "a087a733-009c-e17e-8a7e-2e230b47f23e",
+			"name": "ArmorChestplate",
+			"export_codec": "",
+			"export_path": "",
+			"children": ["ee52d8c1-b8d7-0538-99ca-89f72860ade7", "11ae94a8-ced5-567f-d773-820b0e4b2271", "85c799eb-c822-a295-7f46-ed212a542e0c"],
+			"visibility": false
+		},
+		{
+			"uuid": "2ae3b9db-94f3-7718-b099-90ee801ab105",
+			"name": "ArmorLeggings",
+			"export_codec": "",
+			"export_path": "",
+			"children": [
+				"aa4d58e4-a6e3-0d21-6dd6-33dd6153f0ea",
+				"388f4594-2e4a-e7aa-77d5-9c20fc61ffcd",
+				"c4980a37-517b-d66a-4b31-2e2cdf470c57",
+				"c260035d-38b2-7c1c-2f5f-33e243c9f323",
+				"4f6ec86d-d20e-f40a-3186-2f193c340930",
+				"76090126-2ccf-e0c2-ebdc-b20cf594f491"
+			],
+			"visibility": false
+		},
+		{
+			"uuid": "2a22026c-d601-83f3-5587-51f53571564b",
+			"name": "ArmorBoots",
+			"export_codec": "",
+			"export_path": "",
+			"children": ["c1adc9de-ac48-9d1b-9a1a-04cb262a4ebe"],
+			"visibility": false
+		},
+		{
+			"uuid": "557fb5ac-5f5f-3b90-9296-a558767eff82",
+			"name": "FlatParts",
+			"export_codec": "",
+			"export_path": "",
+			"children": [
+				"118bf4bd-e117-aade-c6b8-ea381b125c15",
+				"c56504d8-637e-7661-32f3-093cafb5b772",
+				"96b7a226-3ef5-50dd-7e0f-e2c709dc69b7",
+				"9df19c01-bfa4-eae5-c5c1-f39a5944d071",
+				"73f3e153-6d1a-9dad-b8a2-b03ba57044f3",
+				"66a3f4ac-ab0b-0101-f2b0-adaa3fa2a5a0",
+				"246ccf6e-2625-f058-5aa5-301aba49c362",
+				"19ba5bec-c26b-5bfe-a300-eb23f09a10a5",
+				"824c4417-9136-2bca-0fe4-43c07de285ac"
+			],
+			"visibility": false
+		}
+	],
 	"animations": [
 		{
 			"uuid": "1cda2a18-394e-a412-e88b-ee6d6dfb96ef",
