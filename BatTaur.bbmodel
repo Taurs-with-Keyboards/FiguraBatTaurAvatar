@@ -2119,6 +2119,360 @@
 			},
 			"type": "cube",
 			"uuid": "4b3cba47-f5cd-d53f-365d-b7529314b4ac"
+		},
+		{
+			"name": "Head_Skin",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4, 0, -4],
+			"to": [4, 8, 4],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"origin": [0, 0, 0],
+			"faces": {
+				"north": {
+					"uv": [8, 8, 16, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0, 8, 8, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [24, 8, 32, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [16, 8, 24, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [16, 8, 8, 0],
+					"texture": 0
+				},
+				"down": {
+					"uv": [24, 0, 16, 8],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "1574c46c-e323-1266-97ee-ead815a682b1"
+		},
+		{
+			"name": "HAT_Skin",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4, 0, -4],
+			"to": [4, 8, 4],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [64, 0],
+			"faces": {
+				"north": {
+					"uv": [40, 8, 48, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [32, 8, 40, 16],
+					"texture": 0
+				},
+				"south": {
+					"uv": [56, 8, 64, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [48, 8, 56, 16],
+					"texture": 0
+				},
+				"up": {
+					"uv": [48, 8, 40, 0],
+					"texture": 0
+				},
+				"down": {
+					"uv": [56, 0, 48, 8],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "3cf887ea-771b-25e0-7b5e-58d9779c71de"
+		},
+		{
+			"name": "Head_Skin",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4, 0, 0],
+			"to": [4, 8, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"origin": [0, 0, 0],
+			"faces": {
+				"north": {
+					"uv": [8, 8, 16, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "e1fdab2a-f034-2028-8d78-c33c1dfc6c36"
+		},
+		{
+			"name": "HAT_Skin",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4, 0, 0],
+			"to": [4, 8, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.5,
+			"origin": [0, 0, 0],
+			"uv_offset": [64, 0],
+			"faces": {
+				"north": {
+					"uv": [40, 8, 48, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "cfcc0da4-e0c7-9e57-88c6-0a10e772b09c"
+		},
+		{
+			"name": "Ear_Flat",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-9.5, 4, 0],
+			"to": [-0.5, 19, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"origin": [0, -33, 0],
+			"uv_offset": [8, 15],
+			"faces": {
+				"north": {
+					"uv": [42, 48, 51, 63],
+					"texture": 1
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [51, 48, 60, 63],
+					"texture": 1
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "19ba5bec-c26b-5bfe-a300-eb23f09a10a5"
+		},
+		{
+			"name": "HAT",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-9.5, 4, 0],
+			"to": [-0.5, 19, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.25,
+			"origin": [0, -33, 0],
+			"uv_offset": [8, 15],
+			"faces": {
+				"north": {
+					"uv": [78, 48, 87, 63],
+					"texture": 1
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [87, 48, 96, 63],
+					"texture": 1
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "f3675b49-4b3d-6c19-78c6-7b8f527a9f90"
+		},
+		{
+			"name": "Ear_Flat",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [0.5, 4, 0],
+			"to": [9.5, 19, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"origin": [0, -33, 0],
+			"uv_offset": [1, 15],
+			"faces": {
+				"north": {
+					"uv": [24, 48, 33, 63],
+					"texture": 1
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [33, 48, 42, 63],
+					"texture": 1
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "824c4417-9136-2bca-0fe4-43c07de285ac"
+		},
+		{
+			"name": "HAT",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [0.5, 4, 0],
+			"to": [9.5, 19, 0],
+			"autouv": 0,
+			"color": 0,
+			"visibility": false,
+			"inflate": 0.25,
+			"origin": [0, -33, 0],
+			"uv_offset": [1, 15],
+			"faces": {
+				"north": {
+					"uv": [60, 48, 69, 63],
+					"texture": 1
+				},
+				"east": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"south": {
+					"uv": [69, 48, 78, 63],
+					"texture": 1
+				},
+				"west": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "422d0de4-306b-b296-f40d-0d1db15ee0dc"
 		}
 	],
 	"outliner": [
@@ -2771,6 +3125,82 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Skull",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"uuid": "8bd5e889-b6fa-3859-605f-407c2ce0f0e7",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": false,
+			"locked": false,
+			"visibility": false,
+			"autouv": 0,
+			"selected": false,
+			"children": [
+				"1574c46c-e323-1266-97ee-ead815a682b1",
+				"3cf887ea-771b-25e0-7b5e-58d9779c71de",
+				{
+					"name": "EarsSkull",
+					"origin": [0, -33, 0],
+					"color": 0,
+					"uuid": "0b5b7d7f-de13-fdba-e180-b5d2925bd77a",
+					"export": true,
+					"mirror_uv": false,
+					"isOpen": false,
+					"locked": false,
+					"visibility": false,
+					"autouv": 0,
+					"selected": false,
+					"children": [
+						{
+							"name": "LeftEarSkull",
+							"origin": [-2.5, 6, 0],
+							"rotation": [0, 0, 12.5],
+							"color": 0,
+							"uuid": "5d7f7857-f0e0-a832-4c05-a0750ed195d9",
+							"export": true,
+							"mirror_uv": false,
+							"isOpen": false,
+							"locked": false,
+							"visibility": false,
+							"autouv": 0,
+							"selected": false,
+							"children": ["19ba5bec-c26b-5bfe-a300-eb23f09a10a5", "f3675b49-4b3d-6c19-78c6-7b8f527a9f90"]
+						},
+						{
+							"name": "RightEarSkull",
+							"origin": [2.5, 6, 0],
+							"rotation": [0, 0, -12.5],
+							"color": 0,
+							"uuid": "7f3ca368-60d0-6a70-94b6-208fa96c4d20",
+							"export": true,
+							"mirror_uv": false,
+							"isOpen": false,
+							"locked": false,
+							"visibility": false,
+							"autouv": 0,
+							"selected": false,
+							"children": ["824c4417-9136-2bca-0fe4-43c07de285ac", "422d0de4-306b-b296-f40d-0d1db15ee0dc"]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Portrait",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"uuid": "93fa43ba-880e-3c49-8c16-13f1bf8862fe",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": false,
+			"locked": false,
+			"visibility": false,
+			"autouv": 0,
+			"selected": false,
+			"children": ["e1fdab2a-f034-2028-8d78-c33c1dfc6c36", "cfcc0da4-e0c7-9e57-88c6-0a10e772b09c"]
 		}
 	],
 	"textures": [
