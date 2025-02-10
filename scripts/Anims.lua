@@ -20,6 +20,7 @@ v = {}
 
 -- Animation variables
 v.snap = 0
+v.head = vec(0, 0, 0)
 
 function events.TICK()
 	
@@ -91,6 +92,7 @@ function events.RENDER(delta, context)
 		
 		-- Store animation variables
 		v.snap = (hitPos.y - pos.y) * (17 / heightOffset)
+		v.head = ((vanilla_model.HEAD:getOriginRot() + 180) % 360 - 180) * 2
 		
 	end
 	

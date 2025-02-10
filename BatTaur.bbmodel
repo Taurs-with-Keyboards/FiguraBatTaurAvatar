@@ -4688,9 +4688,9 @@
 							"channel": "rotation",
 							"data_points": [
 								{
-									"x": "vanilla_model.HEAD:getOriginRot().x * 2",
-									"y": "vanilla_model.HEAD:getOriginRot().y * 2",
-									"z": "vanilla_model.HEAD:getOriginRot().z * 2"
+									"x": "v.head.x",
+									"y": "v.head.y",
+									"z": "v.head.z"
 								}
 							],
 							"uuid": "091d0972-84f2-6c42-131c-52522a359aa0",
