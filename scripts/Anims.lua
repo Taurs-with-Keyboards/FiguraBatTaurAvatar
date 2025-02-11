@@ -10,6 +10,20 @@ local effects = require("scripts.SyncedVariables")
 -- Animations setup
 local anims = animations.BatTaur
 
+-- Config setup
+config:name("BatTaur")
+local idleStance = config:load("AnimsIdleStance") or 1
+
+-- Ground idles table
+local idles = {
+	anims.groundIdle2,
+	anims.groundIdle1,
+	anims.flying
+}
+
+-- Reset IdleStance if its out of range
+if idleStance > #idles then idleStance = 1 end
+
 -- Variables
 local restData = 0
 local isRest = false
@@ -51,14 +65,22 @@ function events.TICK()
 	anims.groundWalk:speed(math.clamp(fbVel < -0.05 and math.min(fbVel, math.abs(lrVel)) * 4 or math.max(fbVel, math.abs(lrVel)) * 4, -2, 2))
 	
 	-- Animation states
-	local flying = (not onGround or effects.cF) and not (restData == 1 or isRest)
-	local groundIdle = onGround and not (effects.cF or restData == 1 or isRest)
-	local groundWalk = groundIdle and vel:length() ~= 0
 	local resting = restData == 1 or isRest
+	local flyIdle = idles[idleStance] == anims.flying and not resting
+	local flying = (flyIdle and onGround) or (not onGround or effects.cF) and not resting
+	local groundIdle = flying and flyIdle or onGround and not (effects.cF or resting)
+	local groundWalk = groundIdle and vel:length() ~= 0 and not flyIdle
+	
+	-- Reset idle anims
+	for i, anim in ipairs(idles) do
+		if anim:isPlaying() and i ~= idleStance and not (anim == anims.flying and flying) then
+			anim:stop()
+		end
+	end
 	
 	-- Animations
 	anims.flying:playing(flying)
-	anims.groundIdle:playing(groundIdle)
+	idles[idleStance]:playing(groundIdle)
 	anims.groundWalk:playing(groundWalk)
 	anims.resting:playing(resting)
 	
@@ -100,10 +122,11 @@ end
 
 -- GS Blending Setup
 local blendAnims = {
-	{ anim = anims.flying,     ticks = {3,7}   },
-	{ anim = anims.groundIdle, ticks = {7,7}   },
-	{ anim = anims.groundWalk, ticks = {3,7}   },
-	{ anim = anims.resting,    ticks = {20,20} }
+	{ anim = anims.flying,      ticks = {3,7}   },
+	{ anim = anims.groundIdle1, ticks = {7,7}   },
+	{ anim = anims.groundIdle2, ticks = {7,7}   },
+	{ anim = anims.groundWalk,  ticks = {3,7}   },
+	{ anim = anims.resting,     ticks = {20,20} }
 }
 
 -- Apply GS Blending
@@ -128,10 +151,19 @@ function pings.animPlayRest(boolean)
 	
 end
 
--- Sync variables
-function pings.syncAnims(a)
+-- Idle stance selector
+function pings.setIdleStance(i)
 	
-	isRest = a
+	idleStance = ((idleStance + i - 1) % #idles) + 1
+	config:save("AnimsIdleStance", idleStance)
+	
+end
+
+-- Sync variables
+function pings.syncAnims(a, b)
+	
+	isRest     = a
+	idleStance = b
 	
 end
 
@@ -147,7 +179,7 @@ if not s then c = {} end
 function events.TICK()
 	
 	if world.getTime() % 200 == 0 then
-		pings.syncAnims(isRest)
+		pings.syncAnims(isRest, idleStance)
 	end
 	
 end
@@ -170,12 +202,17 @@ end
 -- Table setup
 local t = {}
 
--- Action
+-- Actions
 t.restAct = action_wheel:newAction()
 	:item(itemCheck("black_bed"))
 	:onToggle(pings.animPlayRest)
 
--- Update action
+t.idleAct = action_wheel:newAction()
+	:item(itemCheck("scaffolding"))
+	:onLeftClick(function() pings.setIdleStance(1) end)
+	:onRightClick(function() pings.setIdleStance(-1) end)
+
+-- Update actions
 function events.RENDER(delta, context)
 	
 	if action_wheel:isEnabled() then
@@ -189,6 +226,16 @@ function events.RENDER(delta, context)
 			))
 			:toggled(isRest)
 		
+		t.idleAct
+			:title(toJson(
+				{
+					"",
+					{text = "Idle Animation Type", bold = true, color = c.primary},
+					{text = "\n\nChoose your idle pose/animation from "..#idles.." option"..(#idles == 1 and "" or "s")..".", color = c.secondary}
+				}
+			))
+			:toggled(isRest)
+		
 		for _, act in pairs(t) do
 			act:hoverColor(c.hover):toggleColor(c.active)
 		end
@@ -197,5 +244,5 @@ function events.RENDER(delta, context)
 	
 end
 
--- Returns action
+-- Returns actions
 return t
