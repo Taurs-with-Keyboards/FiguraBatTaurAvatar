@@ -118,6 +118,13 @@ function events.RENDER(delta, context)
 		
 	end
 	
+	-- Crouch offset
+	local bodyRot = vanilla_model.BODY:getOriginRot(delta)
+	local crouchPos = vec(0, -math.sin(math.rad(bodyRot.x)) * 2, -math.sin(math.rad(bodyRot.x)) * 12)
+	parts.group.Player:pos(crouchPos._y_)
+	parts.group.UpperBody:offsetPivot(crouchPos):pos(crouchPos.xy_ * 2)
+	parts.group.LowerBody:pos(crouchPos)
+	
 end
 
 -- GS Blending Setup
