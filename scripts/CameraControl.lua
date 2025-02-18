@@ -75,7 +75,7 @@ function events.RENDER(delta, context)
 		
 		-- Camera offset
 		local posOffset  = calcMatrix(head):apply(head:getPivot()) / 19
-		local nameOffset = posOffset + vec(0, 0.85, 0)
+		local nameOffset = posOffset + vec(0, 1.5, 0)
 		
 		if pose.stand or pose.crouch then
 			
