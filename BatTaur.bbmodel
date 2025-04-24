@@ -2616,49 +2616,6 @@
 								"731a0616-85ab-022b-8285-347d0f846fa2",
 								"66fb04e0-4111-56ab-04f3-15bf2e531bbb",
 								{
-									"name": "Elytra",
-									"origin": [0, 0, 0],
-									"color": 0,
-									"uuid": "26b3cb0c-ff53-1c99-07db-1eba2e5c21bc",
-									"export": true,
-									"mirror_uv": false,
-									"isOpen": false,
-									"locked": false,
-									"visibility": true,
-									"autouv": 0,
-									"selected": false,
-									"children": [
-										{
-											"name": "LeftElytraPivot",
-											"origin": [0, 33, 0],
-											"color": 0,
-											"uuid": "97864b6f-dda9-51ce-7673-ecc560c9c4c1",
-											"export": true,
-											"mirror_uv": false,
-											"isOpen": false,
-											"locked": false,
-											"visibility": true,
-											"autouv": 0,
-											"selected": false,
-											"children": []
-										},
-										{
-											"name": "RightElytraPivot",
-											"origin": [0, 33, 0],
-											"color": 0,
-											"uuid": "f049f596-9853-28ae-82f9-21cab9d35ecf",
-											"export": true,
-											"mirror_uv": false,
-											"isOpen": false,
-											"locked": false,
-											"visibility": true,
-											"autouv": 0,
-											"selected": false,
-											"children": []
-										}
-									]
-								},
-								{
 									"name": "Cape",
 									"origin": [0, 33, 2],
 									"color": 0,
