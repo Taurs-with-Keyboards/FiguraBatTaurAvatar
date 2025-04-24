@@ -13,6 +13,9 @@ if not s then armor = {} end
 local s, camera = pcall(require, "scripts.CameraControl")
 if not s then camera = {} end
 
+local s, blind = pcall(require, "scripts.Cataracts")
+if not s then blind = {} end
+
 local s, anims = pcall(require, "scripts.Anims")
 if not s then anims = {} end
 
@@ -119,6 +122,7 @@ action_wheel:setPage(pages.main)
 -- Main actions
 pages.main
 	:action( -1, pageActs.avatar)
+	:action( -1, blind.blindAct)
 	:action( -1, pageActs.anims)
 
 -- Avatar actions
