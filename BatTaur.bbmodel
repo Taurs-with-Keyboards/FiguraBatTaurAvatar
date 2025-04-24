@@ -4189,6 +4189,41 @@
 			"start_delay": "",
 			"loop_delay": "",
 			"animators": {
+				"09d675bc-2d1d-ef3a-d556-aec3ba2a9660": {
+					"name": "LowerBody",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "46.25",
+									"y": "0",
+									"z": "0"
+								}
+							],
+							"uuid": "baf7cb8e-8e86-805f-8a73-2b58fcd58fe8",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						}
+					]
+				}
+			}
+		},
+		{
+			"uuid": "51b11ce5-2aad-3be8-182d-d56d2dd10c60",
+			"name": "flap",
+			"loop": "loop",
+			"override": false,
+			"length": 0,
+			"snapping": 24,
+			"selected": false,
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "",
+			"animators": {
 				"478f33ce-236d-6b3f-f79a-7c39b06f906b": {
 					"name": "Feet",
 					"type": "bone",
@@ -4317,7 +4352,7 @@
 							"channel": "rotation",
 							"data_points": [
 								{
-									"x": "q(...) +\nMath.sin(q.anim_time*720-90)*6.25+46.25",
+									"x": "q(...) +\nMath.sin(q.anim_time*720-90)*6.25",
 									"y": "0",
 									"z": "0"
 								}

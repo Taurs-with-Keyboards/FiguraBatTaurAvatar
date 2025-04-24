@@ -55,15 +55,13 @@ function events.TICK()
 		isRest = false
 	end
 	
-	-- Animation speeds
-	anims.flying:speed(player:isInWater() and 0.5 or 1)
-	
 	-- Animation states
 	local resting = restData == 1 or isRest
 	local flyIdle = idles[idleStance] == anims.flying and not resting
-	local flying = (flyIdle and onGround) or (not onGround or effects.cF) and not resting
-	local groundIdle = flying and flyIdle or onGround and not (effects.cF or resting)
-	local groundWalk = groundIdle and vel:length() ~= 0 and not flyIdle
+	local flying = (flyIdle and onGround) or (not onGround or effects.cF) and not (pose.elytra or resting)
+	local flapping = flying or pose.elytra
+	local groundIdle = flying and flyIdle or onGround and not (pose.crawl or effects.cF or resting)
+	local groundWalk = (groundIdle or pose.crawl) and vel:length() ~= 0 and not flyIdle
 	
 	-- Reset idle anims
 	for i, anim in ipairs(idles) do
@@ -74,6 +72,7 @@ function events.TICK()
 	
 	-- Animations
 	anims.flying:playing(flying)
+	anims.flap:playing(flapping)
 	idles[idleStance]:playing(groundIdle)
 	anims.groundWalk:playing(groundWalk)
 	anims.resting:playing(resting)
@@ -91,7 +90,11 @@ function events.RENDER(delta, context)
 	local lrVel = player:getVelocity():cross(dir.x_z:normalize()).y
 	
 	-- Animation speeds
+	anims.flap:speed((pose.elytra and math.clamp(1 - vel:length() / 2, 0, 1) or 1) * (player:isInWater() and 0.5 or 1))
 	anims.groundWalk:speed(math.clamp(fbVel < -0.05 and math.min(fbVel, math.abs(lrVel)) * 4 or math.max(fbVel, math.abs(lrVel)) * 4, -2, 2))
+	
+	-- Animation blend
+	anims.flap:blend(pose.elytra and math.clamp(1 - vel:length() / 2, 0, 1) or 1)
 	
 	-- Resting variables
 	if restData == 1 or isRest then
@@ -135,6 +138,7 @@ end
 -- GS Blending Setup
 local blendAnims = {
 	{ anim = anims.flying,      ticks = {3,7}   },
+	{ anim = anims.flap,        ticks = {3,7}   },
 	{ anim = anims.groundIdle1, ticks = {7,7}   },
 	{ anim = anims.groundIdle2, ticks = {7,7}   },
 	{ anim = anims.groundWalk,  ticks = {3,7}   },
