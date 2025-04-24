@@ -225,6 +225,7 @@ t.idleAct = action_wheel:newAction()
 	:item(itemCheck("scaffolding"))
 	:onLeftClick(function() pings.setIdleStance(1) end)
 	:onRightClick(function() pings.setIdleStance(-1) end)
+	:onScroll(pings.setIdleStance)
 
 -- Update actions
 function events.RENDER(delta, context)
