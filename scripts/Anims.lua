@@ -252,7 +252,7 @@ function events.RENDER(delta, context)
 					{text = "Idle Animation Type", bold = true, color = c.primary},
 					{text = "\n\nChoose your idle pose/animation from "..#idles.." option"..(#idles == 1 and "" or "s")..".", color = c.secondary},
 					{text = #idles > 1 and "\n\nCurrent Pose: " or "", bold = true, color = c.secondary},
-					{text = #idles > 1 and idles[idleStance]:getName():gsub("^%l", string.upper) or ""},
+					{text = #idles > 1 and idles[idleStance]:getName():gsub("^%l", string.upper) or ""}
 				}
 			))
 			:toggled(isRest)
