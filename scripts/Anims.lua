@@ -41,13 +41,8 @@ function events.TICK()
 	-- Variables
 	local pos = player:getPos()
 	local vel = player:getVelocity()
-	local dir = player:getLookDir()
 	local onGround = ground()
 	local block, hitPos = raycast:block(pos, pos + vec(0, 10, 0))
-	
-	-- Directional velocity
-	local fbVel = player:getVelocity():dot((dir.x_z):normalize())
-	local lrVel = player:getVelocity():cross(dir.x_z:normalize()).y
 	
 	-- Origins power
 	restData = origins.getPowerData(player, "battaur:ceiling_snoozer_toggle") or 0
@@ -62,7 +57,6 @@ function events.TICK()
 	
 	-- Animation speeds
 	anims.flying:speed(player:isInWater() and 0.5 or 1)
-	anims.groundWalk:speed(math.clamp(fbVel < -0.05 and math.min(fbVel, math.abs(lrVel)) * 4 or math.max(fbVel, math.abs(lrVel)) * 4, -2, 2))
 	
 	-- Animation states
 	local resting = restData == 1 or isRest
@@ -87,6 +81,17 @@ function events.TICK()
 end
 
 function events.RENDER(delta, context)
+	
+	-- Variables
+	local vel = player:getVelocity(delta)
+	local dir = player:getLookDir()
+	
+	-- Directional velocity
+	local fbVel = player:getVelocity():dot((dir.x_z):normalize())
+	local lrVel = player:getVelocity():cross(dir.x_z:normalize()).y
+	
+	-- Animation speeds
+	anims.groundWalk:speed(math.clamp(fbVel < -0.05 and math.min(fbVel, math.abs(lrVel)) * 4 or math.max(fbVel, math.abs(lrVel)) * 4, -2, 2))
 	
 	-- Resting variables
 	if restData == 1 or isRest then
