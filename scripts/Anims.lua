@@ -255,7 +255,6 @@ function events.RENDER(delta, context)
 					{text = #idles > 1 and idles[idleStance]:getName():gsub("^%l", string.upper) or ""}
 				}
 			))
-			:toggled(isRest)
 		
 		for _, act in pairs(t) do
 			act:hoverColor(c.hover):toggleColor(c.active)
