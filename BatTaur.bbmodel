@@ -5053,7 +5053,7 @@
 							"data_points": [
 								{
 									"x": "0",
-									"y": "v.snap",
+									"y": "v.snap + (player:isCrouching() and 2 or 0)",
 									"z": "0"
 								}
 							],
