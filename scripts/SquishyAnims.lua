@@ -115,7 +115,7 @@ function events.TICK()
 	for i in ipairs(head.strength) do
 		head.strength[i] = anims.resting:isPlaying() and -headStrength[i] or headStrength[i]
 	end
-	head.tilt = anims.resting:isPlaying() and -headTilt     or headTilt
+	head.tilt = anims.resting:isPlaying() and -headTilt or headTilt
 	
 end
 
