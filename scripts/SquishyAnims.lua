@@ -35,9 +35,9 @@ local rightArmLerp = lerp:new(0.5, armsMove and 1 or 0)
 local ears = squapi.ear:new(
 	parts.group.LeftEar,
 	parts.group.RightEar,
-	0.5,      -- Range Multiplier (0.5)
+	0,        -- Range Multiplier (0)
 	false,    -- Horizontal (false)
-	0.2,      -- Bend Strength (0.2)
+	2,        -- Bend Strength (2)
 	earFlick, -- Do Flick (earFlick)
 	400,      -- Flick Chance (400)
 	0.05,     -- Stiffness (0.05)
