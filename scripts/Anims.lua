@@ -12,7 +12,7 @@ local anims = animations.BatTaur
 
 -- Config setup
 config:name("BatTaur")
-local idleStance = config:load("AnimsIdleStance") or 1
+local idleStance = config:load("AnimsIdle") or 1
 
 -- Ground idles table
 local idles = {
@@ -173,7 +173,7 @@ end
 function pings.setIdleStance(i)
 	
 	idleStance = ((idleStance + i - 1) % #idles) + 1
-	config:save("AnimsIdleStance", idleStance)
+	config:save("AnimsIdle", idleStance)
 	
 end
 
