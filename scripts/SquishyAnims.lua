@@ -150,8 +150,8 @@ function events.RENDER(delta, context)
 		:visible(not firstPerson)
 	
 	-- Set visible if in first person
-	--parts.group.LeftArmFP:visible(firstPerson)
-	--parts.group.RightArmFP:visible(firstPerson)
+	parts.group.LeftArmFP:visible(firstPerson)
+	parts.group.RightArmFP:visible(firstPerson)
 	
 	-- Set upperbody to offset rot and crouching pivot point
 	parts.group.UpperBody:rot(-parts.group.LowerBody:getRot())
