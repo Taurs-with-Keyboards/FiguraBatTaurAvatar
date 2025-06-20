@@ -5087,6 +5087,169 @@
 			}
 		},
 		{
+			"uuid": "f119fd8a-57fb-6d45-06a6-924572b52194",
+			"name": "sleep",
+			"loop": "loop",
+			"override": false,
+			"length": 0,
+			"snapping": 24,
+			"selected": false,
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "",
+			"animators": {
+				"e8b93555-0589-b71d-130e-8587d95c0488": {
+					"name": "Player",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "position",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "-6",
+									"z": "-1"
+								}
+							],
+							"uuid": "123bd631-4f1d-d749-0ce9-4fa7410c4c6d",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						}
+					]
+				},
+				"478f33ce-236d-6b3f-f79a-7c39b06f906b": {
+					"name": "Feet",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "25",
+									"y": "0",
+									"z": "0"
+								}
+							],
+							"uuid": "6f2bce09-875d-719e-2772-8176dbb9fb39",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						}
+					]
+				},
+				"e80940bc-d9b7-5305-27fb-9d5da5ee07f2": {
+					"name": "LeftWing",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "10",
+									"z": "0"
+								}
+							],
+							"uuid": "c535c4af-43f2-ef3f-117c-cdef5d5d4777",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						},
+						{
+							"channel": "position",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "0",
+									"z": "1"
+								}
+							],
+							"uuid": "bd77df37-5ca2-cf9a-b093-0212403780c6",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						}
+					]
+				},
+				"adc38d6d-d60f-b192-482f-8f4d89557c65": {
+					"name": "LeftWing2",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "120",
+									"z": "0"
+								}
+							],
+							"uuid": "34af69cc-a429-5003-71b5-38c315034422",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						}
+					]
+				},
+				"bf5f1da8-0214-a7ca-f347-0277d88570f5": {
+					"name": "RightWing",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "-10",
+									"z": "0"
+								}
+							],
+							"uuid": "c851aef9-fdd9-b567-fc7b-474f6c4305a6",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						},
+						{
+							"channel": "position",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "0",
+									"z": "1"
+								}
+							],
+							"uuid": "5378cab8-4f85-180e-2ff9-3d28e79af95d",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						}
+					]
+				},
+				"caf58e9b-3f14-7f90-4b74-d3c093f32cc7": {
+					"name": "RightWing2",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "-120",
+									"z": "0"
+								}
+							],
+							"uuid": "0a64433c-af98-da24-6255-44324e35446c",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear"
+						}
+					]
+				}
+			}
+		},
+		{
 			"uuid": "fd0b72bb-0cfb-1340-df17-8a6987833d10",
 			"name": "horizontalEars",
 			"loop": "loop",

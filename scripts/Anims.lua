@@ -57,11 +57,12 @@ function events.TICK()
 	
 	-- Animation states
 	local resting = restData == 1 or isRest
-	local flyIdle = idles[idleStance] == anims.flying and not (pose.swim or resting)
+	local flyIdle = idles[idleStance] == anims.flying and not (pose.swim or pose.sleep or resting)
 	local flying = (flyIdle and onGround) or (not onGround or effects.cF) and not (pose.swim or pose.elytra or resting)
 	local flapping = flying or (pose.swim and not pose.crawl) or pose.elytra
-	local groundIdle = flying and flyIdle or onGround and not (pose.swim or pose.crawl or effects.cF or resting)
+	local groundIdle = flying and flyIdle or onGround and not (pose.swim or pose.crawl or pose.sleep or effects.cF or resting)
 	local groundWalk = (groundIdle or pose.crawl) and vel:length() ~= 0 and not flyIdle
+	local sleep = pose.sleep
 	
 	-- Reset idle anims
 	for i, anim in ipairs(idles) do
@@ -76,6 +77,7 @@ function events.TICK()
 	idles[idleStance]:playing(groundIdle)
 	anims.groundWalk:playing(groundWalk)
 	anims.resting:playing(resting)
+	anims.sleep:playing(sleep)
 	
 end
 
@@ -142,7 +144,8 @@ local blendAnims = {
 	{ anim = anims.groundIdle1, ticks = {7,7}   },
 	{ anim = anims.groundIdle2, ticks = {7,7}   },
 	{ anim = anims.groundWalk,  ticks = {3,7}   },
-	{ anim = anims.resting,     ticks = {20,20} }
+	{ anim = anims.resting,     ticks = {20,20} },
+	{ anim = anims.sleep,       ticks = {20,0}  }
 }
 
 -- Apply GS Blending
