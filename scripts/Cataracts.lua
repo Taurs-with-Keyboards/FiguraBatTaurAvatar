@@ -4,9 +4,8 @@
 if not host:isHost() then return end
 
 -- Required scripts
-local itemCheck = require("lib.ItemCheck")
-local s, c = pcall(require, "scripts.ColorProperties")
-if not s then c = {} end
+local s, wheel, itemCheck, c = pcall(require, "scripts.ActionWheel")
+if not s then return end -- Kills script early if ActionWheel.lua isnt found
 
 -- Config setup
 config:name("BatTaur")
@@ -53,11 +52,14 @@ local function setBlind(i)
 	
 end
 
--- Table setup
-local t = {}
+-- Pages
+local parentPage = action_wheel:getPage("Main")
+
+-- Actions table setup
+local a = {}
 
 -- Action
-t.blindAct = action_wheel:newAction()
+a.blindAct = parentPage:newAction()
 	:onLeftClick(function() setBlind(1) end)
 	:onRightClick(function() setBlind(-1) end)
 	:onScroll(setBlind)
@@ -84,7 +86,7 @@ function events.RENDER(delta, context)
 	
 	if action_wheel:isEnabled() then
 		local actionSetup = blindInfo[blind]
-		t.blindAct
+		a.blindAct
 			:title(toJson(
 				{
 					"",
@@ -99,13 +101,10 @@ function events.RENDER(delta, context)
 			:color(actionSetup.color or c.active)
 			:item(itemCheck(actionSetup.item))
 		
-		for _, act in pairs(t) do
+		for _, act in pairs(a) do
 			act:hoverColor(c.hover)
 		end
 		
 	end
 	
 end
-
--- Return action
-return t
