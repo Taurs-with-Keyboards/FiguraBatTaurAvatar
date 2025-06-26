@@ -35,10 +35,6 @@ function events.TICK()
 	-- Decrease timer
 	timer = math.max(timer - 1, 0)
 	
-end
-
-function events.RENDER(delta, context)
-	
 	-- Set post effect
 	renderer:postEffect(blind > 1 and timer == 0 and "blobs2" or nil)
 	
