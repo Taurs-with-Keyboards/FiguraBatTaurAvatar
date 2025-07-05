@@ -12,7 +12,7 @@ local anims = animations.BatTaur
 
 -- Config setup
 config:name("BatTaur")
-local idleStance = config:load("AnimsIdle") or 1
+local idleStyle = config:load("AnimsIdle") or 1
 
 -- Ground idles table
 local idles = {
@@ -21,8 +21,8 @@ local idles = {
 	anims.flying
 }
 
--- Reset IdleStance if its out of range
-if idleStance > #idles then idleStance = 1 end
+-- Reset IdleStyle if its out of range
+if idleStyle > #idles then idleStyle = 1 end
 
 -- Variables
 local restData = 0
@@ -57,7 +57,7 @@ function events.TICK()
 	
 	-- Animation states
 	local resting = restData == 1 or isRest
-	local flyIdle = idles[idleStance] == anims.flying and not (pose.swim or pose.sleep or resting)
+	local flyIdle = idles[idleStyle] == anims.flying and not (pose.swim or pose.sleep or resting)
 	local flying = (flyIdle and onGround) or (not onGround or effects.cF) and not (pose.swim or pose.elytra or resting)
 	local flapping = flying or (pose.swim and not pose.crawl) or pose.elytra
 	local groundIdle = flying and flyIdle or onGround and not (pose.swim or pose.crawl or pose.sleep or effects.cF or resting)
@@ -66,7 +66,7 @@ function events.TICK()
 	
 	-- Reset idle anims
 	for i, anim in ipairs(idles) do
-		if anim:isPlaying() and i ~= idleStance and not (anim == anims.flying and flying) then
+		if anim:isPlaying() and i ~= idleStyle and not (anim == anims.flying and flying) then
 			anim:stop()
 		end
 	end
@@ -74,7 +74,7 @@ function events.TICK()
 	-- Animations
 	anims.flying:playing(flying)
 	anims.flap:playing(flapping)
-	idles[idleStance]:playing(groundIdle)
+	idles[idleStyle]:playing(groundIdle)
 	anims.groundWalk:playing(groundWalk)
 	anims.resting:playing(resting)
 	anims.sleep:playing(sleep)
@@ -173,18 +173,18 @@ function pings.animPlayRest(boolean)
 end
 
 -- Idle stance selector
-function pings.setIdleStance(i)
+function pings.setIdleStyle(i)
 	
-	idleStance = ((idleStance + i - 1) % #idles) + 1
-	config:save("AnimsIdle", idleStance)
+	idleStyle = ((idleStyle + i - 1) % #idles) + 1
+	config:save("AnimsIdle", idleStyle)
 	
 end
 
 -- Sync variables
 function pings.syncAnims(a, b)
 	
-	isRest     = a
-	idleStance = b
+	isRest    = a
+	idleStyle = b
 	
 end
 
@@ -195,7 +195,7 @@ if not host:isHost() then return end
 function events.TICK()
 	
 	if world.getTime() % 200 == 0 then
-		pings.syncAnims(isRest, idleStance)
+		pings.syncAnims(isRest, idleStyle)
 	end
 	
 end
@@ -242,9 +242,9 @@ a.restAct = animsPage:newAction()
 
 a.idleAct = animsPage:newAction()
 	:item(itemCheck("scaffolding"))
-	:onLeftClick(function() pings.setIdleStance(1) end)
-	:onRightClick(function() pings.setIdleStance(-1) end)
-	:onScroll(pings.setIdleStance)
+	:onLeftClick(function() pings.setIdleStyle(1) end)
+	:onRightClick(function() pings.setIdleStyle(-1) end)
+	:onScroll(pings.setIdleStyle)
 
 -- Update actions
 function events.RENDER(delta, context)
@@ -274,7 +274,7 @@ function events.RENDER(delta, context)
 					{text = "Idle Animation Type", bold = true, color = c.primary},
 					{text = "\n\nChoose your idle pose/animation from "..#idles.." option"..(#idles == 1 and "" or "s")..".", color = c.secondary},
 					{text = #idles > 1 and "\n\nCurrent Pose: " or "", bold = true, color = c.secondary},
-					{text = #idles > 1 and idles[idleStance]:getName():gsub("^%l", string.upper) or ""}
+					{text = #idles > 1 and idles[idleStyle]:getName():gsub("^%l", string.upper) or ""}
 				}
 			))
 		
