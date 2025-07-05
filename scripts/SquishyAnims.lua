@@ -182,7 +182,7 @@ function pings.setSquapiArmsMove(boolean)
 	
 end
 
--- Sync variable
+-- Sync variables
 function pings.syncSquapi(a, b)
 	
 	earFlick = a
