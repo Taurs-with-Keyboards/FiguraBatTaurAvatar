@@ -36,6 +36,25 @@ v = {}
 v.snap = 0
 v.head = vec(0, 0, 0)
 
+-- Parrot pivots
+local parrots = {
+	
+	parts.group.LeftParrotPivot,
+	parts.group.RightParrotPivot
+	
+}
+
+-- Calculate parent's rotations
+local function calculateParentRot(m)
+	
+	local parent = m:getParent()
+	if not parent then
+		return m:getTrueRot()
+	end
+	return calculateParentRot(parent) + m:getTrueRot()
+	
+end
+
 function events.TICK()
 	
 	-- Variables
@@ -126,6 +145,11 @@ function events.RENDER(delta, context)
 		v.snap = (hitPos.y - pos.y) * (17 / heightOffset)
 		v.head = ((vanilla_model.HEAD:getOriginRot() + 180) % 360 - 180) * 2
 		
+	end
+	
+	-- Parrot rot offset
+	for _, parrot in pairs(parrots) do
+		parrot:rot(-calculateParentRot(parrot:getParent()) - vanilla_model.BODY:getOriginRot())
 	end
 	
 	-- Crouch offset
