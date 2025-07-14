@@ -125,7 +125,7 @@ local blindInfo = {
 		color = "000000"
 	},
 	{
-		title = {label = {text = "Echolocation", color = "yellow"}, text = "Blind, unless you scream!\n(Check your keybinds/origin for screaming options!)"},
+		title = {label = {text = "Echolocation", color = "yellow"}, text = "Blind, unless you scream!\n(Check your keybinds for screaming options!)"},
 		item  = "amethyst_shard"
 	},
 	{
