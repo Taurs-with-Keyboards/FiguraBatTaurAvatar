@@ -4550,6 +4550,24 @@
 			"visibility": false
 		},
 		{
+			"uuid": "557fb5ac-5f5f-3b90-9296-a558767eff82",
+			"name": "FlatParts",
+			"export_codec": "",
+			"export_path": "",
+			"children": [
+				"118bf4bd-e117-aade-c6b8-ea381b125c15",
+				"c56504d8-637e-7661-32f3-093cafb5b772",
+				"96b7a226-3ef5-50dd-7e0f-e2c709dc69b7",
+				"9df19c01-bfa4-eae5-c5c1-f39a5944d071",
+				"73f3e153-6d1a-9dad-b8a2-b03ba57044f3",
+				"66a3f4ac-ab0b-0101-f2b0-adaa3fa2a5a0",
+				"246ccf6e-2625-f058-5aa5-301aba49c362",
+				"19ba5bec-c26b-5bfe-a300-eb23f09a10a5",
+				"824c4417-9136-2bca-0fe4-43c07de285ac"
+			],
+			"visibility": false
+		},
+		{
 			"uuid": "8178a272-cf39-3594-052e-0bbf666bcecb",
 			"name": "HatLayer",
 			"export_codec": "",
@@ -4670,24 +4688,6 @@
 			"export_codec": "",
 			"export_path": "",
 			"children": ["c1adc9de-ac48-9d1b-9a1a-04cb262a4ebe"],
-			"visibility": false
-		},
-		{
-			"uuid": "557fb5ac-5f5f-3b90-9296-a558767eff82",
-			"name": "FlatParts",
-			"export_codec": "",
-			"export_path": "",
-			"children": [
-				"118bf4bd-e117-aade-c6b8-ea381b125c15",
-				"c56504d8-637e-7661-32f3-093cafb5b772",
-				"96b7a226-3ef5-50dd-7e0f-e2c709dc69b7",
-				"9df19c01-bfa4-eae5-c5c1-f39a5944d071",
-				"73f3e153-6d1a-9dad-b8a2-b03ba57044f3",
-				"66a3f4ac-ab0b-0101-f2b0-adaa3fa2a5a0",
-				"246ccf6e-2625-f058-5aa5-301aba49c362",
-				"19ba5bec-c26b-5bfe-a300-eb23f09a10a5",
-				"824c4417-9136-2bca-0fe4-43c07de285ac"
-			],
 			"visibility": false
 		}
 	],
