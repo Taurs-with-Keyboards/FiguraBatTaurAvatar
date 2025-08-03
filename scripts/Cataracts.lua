@@ -8,23 +8,38 @@ local origins = require("lib.OriginsAPI")
 local s, wheel, itemCheck, c = pcall(require, "scripts.ActionWheel")
 if not s then return end -- Kills script early if ActionWheel.lua isnt found
 
+-- Variables
+local postEffect = client:hasResource("shaders/post/blobs2.json") and "blobs2" or client:hasResource("shaders/post/blur.json") and "blur"
+local power = false
+local timer = 0
+
+-- Updates variable when resources are reloaded
+function events.RESOURCE_RELOAD()
+	postEffect = client:hasResource("shaders/post/blobs2.json") and "blobs2" or client:hasResource("shaders/post/blur.json") and "blur"
+end
+
 -- Config setup
 config:name("BatTaur")
 local blind = config:load("BlindState") or 1
-renderer:postEffect(blind ~= 1 and "blobs2" or nil)
+renderer:postEffect(blind ~= 1 and postEffect or nil)
 --[[
 	1 - Full sight
 	2 - Blind (With echolocation)
 	3 - Blind
 	4 - Origin override (Hidden option :O)
+	5 - Missing resource (Hidden bad option :/)
 --]]
-
--- Variables
-local power = false
-local timer = 0
 
 -- Check for origin power
 function events.TICK()
+	
+	-- Checks if resource exists
+	if not postEffect then
+		
+		blind = 5
+		return
+		
+	end
 	
 	-- Check for power
 	power = origins.hasPower(player, "battaur:echolocation")
@@ -68,7 +83,7 @@ local function startCountdown()
 		
 		-- Remove tick event, reapply post effect
 		if timer == 0 then
-			renderer:postEffect("blobs2")
+			renderer:postEffect(postEffect)
 			events.TICK:remove("CataractsTimer")
 		end
 		
@@ -95,13 +110,13 @@ end
 -- Blindness states
 local function setBlind(i)
 	
-	-- Kill function early if power is active
-	if power then return end
+	-- Kill function early if resource missing or if power is active
+	if not postEffect or power then return end
 	
 	blind = ((blind + i - 1) % 3) + 1
 	config:save("BlindState", blind)
 	
-	renderer:postEffect(blind ~= 1 and "blobs2" or nil)
+	renderer:postEffect(blind ~= 1 and postEffect or nil)
 	
 end
 
@@ -135,6 +150,10 @@ local blindInfo = {
 	{
 		title = {label = {text = "Origin Override", color = "dark_purple"}, text = "You have no say in this one."},
 		item  = "origins:orb_of_origin"
+	},
+	{
+		title = {label = {text = "Missing post effect!", color = "dark_red"}, text = "Resource missing!\nYour minecraft version or resource pack is missing the effect!"},
+		item  = "barrier"
 	}
 }
 
