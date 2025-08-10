@@ -1,4 +1,5 @@
 -- Irri's idea for the script name :)
+-- t3rra_cat0 idea for the pun
 
 -- Host only instructions
 if not host:isHost() then return end
