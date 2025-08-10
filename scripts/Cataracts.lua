@@ -66,7 +66,7 @@ local function startCountdown()
 	renderer:postEffect(nil)
 	
 	-- Remove previous timer
-	events.TICK:remove("CataractsTimer")
+	events.TICK:remove("BlindTimer")
 	
 	-- Set timer to 5 seconds
 	timer = 100
@@ -75,7 +75,7 @@ local function startCountdown()
 		
 		-- Delete timer if should not be active
 		if blind ~= 2 then
-			events.TICK:remove("CataractsTimer")
+			events.TICK:remove("BlindTimer")
 		end
 		
 		-- Decrease timer
@@ -84,10 +84,10 @@ local function startCountdown()
 		-- Remove tick event, reapply post effect
 		if timer == 0 then
 			renderer:postEffect(postEffect)
-			events.TICK:remove("CataractsTimer")
+			events.TICK:remove("BlindTimer")
 		end
 		
-	end, "CataractsTimer")
+	end, "BlindTimer")
 	
 end
 
