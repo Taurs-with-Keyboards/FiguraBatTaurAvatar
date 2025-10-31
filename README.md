@@ -1,5 +1,5 @@
 # [Bat Taur Avatar](https://github.com/Taurs-with-Keyboards/FiguraBatTaurAvatar)
-### Version: 1.0.0
+### Version: 1.0.1
 A Figura Avatar template designed to give the user a customizable bat lower body.
 
 ### Authors:
