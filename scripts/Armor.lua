@@ -40,77 +40,34 @@ batArmor.Materials.netherite
 	:setTexture(textures["textures.armor.netheriteArmor"] or textures["BatTaur.netheriteArmor"])
 
 -- Trims
--- Bolt
-batArmor.TrimPatterns.bolt
-	:setTexture(textures["textures.armor.trims.boltTrim"] or textures["BatTaur.boltTrim"])
+local trims = {
+	"bolt",
+	"coast",
+	"dune",
+	"eye",
+	"flow",
+	"host",
+	"raiser",
+	"rib",
+	"sentry",
+	"shaper",
+	"silence",
+	"snout",
+	"spire",
+	"tide",
+	"vex",
+	"ward",
+	"wayfinder",
+	"wild"
+}
 
--- Coast
-batArmor.TrimPatterns.coast
-	:setTexture(textures["textures.armor.trims.coastTrim"] or textures["BatTaur.coastTrim"])
-
--- Dune
-batArmor.TrimPatterns.dune
-	:setTexture(textures["textures.armor.trims.duneTrim"] or textures["BatTaur.duneTrim"])
-
--- Eye
-batArmor.TrimPatterns.eye
-	:setTexture(textures["textures.armor.trims.eyeTrim"] or textures["BatTaur.eyeTrim"])
-
--- Flow
-batArmor.TrimPatterns.flow
-	:setTexture(textures["textures.armor.trims.flowTrim"] or textures["BatTaur.flowTrim"])
-
--- Host
-batArmor.TrimPatterns.host
-	:setTexture(textures["textures.armor.trims.hostTrim"] or textures["BatTaur.hostTrim"])
-
--- Raiser
-batArmor.TrimPatterns.raiser
-	:setTexture(textures["textures.armor.trims.raiserTrim"] or textures["BatTaur.raiserTrim"])
-
--- Rib
-batArmor.TrimPatterns.rib
-	:setTexture(textures["textures.armor.trims.ribTrim"] or textures["BatTaur.ribTrim"])
-
--- Sentry
-batArmor.TrimPatterns.sentry
-	:setTexture(textures["textures.armor.trims.sentryTrim"] or textures["BatTaur.sentryTrim"])
-
--- Shaper
-batArmor.TrimPatterns.shaper
-	:setTexture(textures["textures.armor.trims.shaperTrim"] or textures["BatTaur.shaperTrim"])
-
--- Silence
-batArmor.TrimPatterns.silence
-	:setTexture(textures["textures.armor.trims.silenceTrim"] or textures["BatTaur.silenceTrim"])
-
--- Snout
-batArmor.TrimPatterns.snout
-	:setTexture(textures["textures.armor.trims.snoutTrim"] or textures["BatTaur.snoutTrim"])
-
--- Spire
-batArmor.TrimPatterns.spire
-	:setTexture(textures["textures.armor.trims.spireTrim"] or textures["BatTaur.spireTrim"])
-
--- Tide
-batArmor.TrimPatterns.tide
-	:setTexture(textures["textures.armor.trims.tideTrim"] or textures["BatTaur.tideTrim"])
-
--- Vex
-batArmor.TrimPatterns.vex
-	:setTexture(textures["textures.armor.trims.vexTrim"] or textures["BatTaur.vexTrim"])
-
--- Ward
-batArmor.TrimPatterns.ward
-	:setTexture(textures["textures.armor.trims.wardTrim"] or textures["BatTaur.wardTrim"])
-
--- Wayfinder
-batArmor.TrimPatterns.wayfinder
-	:setTexture(textures["textures.armor.trims.wayfinderTrim"] or textures["BatTaur.wayfinderTrim"])
-
--- Wild
-batArmor.TrimPatterns.wild
-	:setTexture(textures["textures.armor.trims.wildTrim"] or textures["BatTaur.wildTrim"])
+-- Apply trims
+for _, trim in ipairs(trims) do
+	local tex = textures["textures.armor.trims."..trim.."Trim"] or textures["BatTaur."..trim.."Trim"] or false
+	if tex then
+		batArmor.TrimPatterns[trim]:setTexture(tex)
+	end
+end
 
 -- Config setup
 config:name("BatTaur")
