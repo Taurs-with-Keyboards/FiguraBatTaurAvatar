@@ -103,16 +103,18 @@ end
 function events.RENDER(delta, context)
 	
 	-- Variables
-	local vel = player:getVelocity(delta)
-	local dir = player:getLookDir()
+	local vel = player:getVelocity()
+	local yaw = player:getBodyYaw()
+	local dir = vec(math.sin(math.rad(-yaw)), 0, math.cos(math.rad(-yaw)))
 	
 	-- Directional velocity
-	local fbVel = player:getVelocity():dot((dir.x_z):normalize())
-	local lrVel = player:getVelocity():cross(dir.x_z:normalize()).y
+	local fbVel = vel:dot((dir.x_z):normalized())
+	local lrVel = vel:crossed(dir.x_z:normalized()).y
+	local udVel = vel.y
 	
 	-- Animation speeds
 	anims.flap:speed((pose.elytra and math.clamp(1 - vel:length() / 2, 0, 1) or pose.swim and math.clamp(vel:length() * 4, 0, 1) or 1) * (player:isInWater() and 0.5 or 1))
-	anims.groundWalk:speed(math.clamp(fbVel < -0.05 and math.min(fbVel, math.abs(lrVel)) * 4 or math.max(fbVel, math.abs(lrVel)) * 4, -2, 2))
+	anims.groundWalk:speed(math.clamp(fbVel * 4, -2, 2))
 	
 	-- Animation blend
 	anims.flap:blend(pose.elytra and math.clamp(1 - vel:length() / 2, 0, 1) or 1)
