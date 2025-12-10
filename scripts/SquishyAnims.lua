@@ -94,9 +94,9 @@ function pings.setSquapiEarFlick(boolean)
 end
 
 -- Sync variables
-function pings.syncSquapi(a)
+function pings.syncSquapi(...)
 	
-	earFlick = a
+	earFlick = ...
 	
 end
 

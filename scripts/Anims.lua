@@ -253,11 +253,9 @@ function pings.setAnimsArmsMove(boolean)
 end
 
 -- Sync variables
-function pings.syncAnims(a, b, c)
+function pings.syncAnims(...)
 	
-	isRest    = a
-	idleStyle = b
-	armsMove  = c
+	isRest, idleStyle, armsMove = ...
 	
 end
 
