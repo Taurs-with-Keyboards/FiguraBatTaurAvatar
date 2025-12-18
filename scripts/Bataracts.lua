@@ -5,11 +5,13 @@
 if not host:isHost() then return end
 
 -- Required scripts
-local origins = require("lib.OriginsAPI")
 local s, wheel, itemCheck, c = pcall(require, "scripts.ActionWheel")
 if not s then return end -- Kills script early if ActionWheel.lua isnt found
+local sync    = require("lib.LetThatSyncFig")
+local origins = require("lib.OriginsAPI")
 
 -- Variables
+local blind = sync.pick(config:load("BlindState"), 1)
 local postEffect = client:hasResource("shaders/post/blobs2.json") and "blobs2" or client:hasResource("shaders/post/blur.json") and "blur"
 local power = false
 local timer = 0
@@ -19,9 +21,7 @@ function events.RESOURCE_RELOAD()
 	postEffect = client:hasResource("shaders/post/blobs2.json") and "blobs2" or client:hasResource("shaders/post/blur.json") and "blur"
 end
 
--- Config setup
-config:name("BatTaur")
-local blind = config:load("BlindState") or 1
+-- Init state setup
 renderer:postEffect(blind ~= 1 and postEffect or nil)
 --[[
 	1 - Full sight

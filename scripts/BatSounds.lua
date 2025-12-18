@@ -12,17 +12,18 @@ if not host:isHost() then return end
 
 -- Required scripts
 local origins = require("lib.OriginsAPI")
-
--- Config setup
-config:name("BatTaur")
+local sync    = require("lib.LetThatSyncFig")
 
 -- Variables
 local power = false
 local cooldown = 0
 
--- Screech Keybind
-local screechBind   = config:load("ScreechKeybind") or "key.keyboard.keypad.2"
-local setScreechKey = keybinds:newKeybind("Bat Screech"):onPress(function() if power then host:setActionbar("Hey! Your origin has a button for this! Use that instead!") return end pings.playBatScreech() cooldown = 30 end):key(screechBind)
+-- Keybinds
+local screechKeybind = keybinds:newKeybind("Bat Screech", "key.keyboard.keypad.2")
+	:onPress(function() if power then host:setActionbar("Hey! Your origin has a button for this! Use that instead!") return end pings.playBatScreech() cooldown = 30 end)
+
+-- Sync config keybinds
+sync.keybind(screechKeybind, "ScreechKeybind")
 
 function events.TICK()
 	
@@ -33,17 +34,6 @@ function events.TICK()
 	cooldown = math.max(cooldown - 1, 0)
 	
 	-- Disable keybind if cooldown is active, and player isnt dead
-	setScreechKey:enabled(cooldown == 0 and player:getDeathTime() == 0)
-	
-end
-
--- Keybind updater
-function events.TICK()
-	
-	local screechKey = setScreechKey:getKey()
-	if screechKey ~= screechBind then
-		screechBind = screechKey
-		config:save("ScreechKeybind", screechKey)
-	end
+	screechKeybind:enabled(cooldown == 0 and player:getDeathTime() == 0)
 	
 end
