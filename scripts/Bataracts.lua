@@ -5,7 +5,7 @@
 if not host:isHost() then return end
 
 -- Required scripts
-local s, wheel, itemCheck, c = pcall(require, "scripts.ActionWheel")
+local s, wheel, c = pcall(require, "scripts.ActionWheel")
 if not s then return end -- Kills script early if ActionWheel.lua isnt found
 local sync    = require("lib.LetThatSyncFig")
 local origins = require("lib.OriginsAPI")
@@ -176,7 +176,7 @@ function events.RENDER(delta, context)
 				}
 			))
 			:color(actionSetup.color or c.active)
-			:item(itemCheck(actionSetup.item))
+			:item(actionSetup.item)
 		
 		for _, act in pairs(a) do
 			act:hoverColor(c.hover)
