@@ -2,6 +2,9 @@
 ### Version: 1.0.2
 A Figura Avatar template designed to give the user a customizable bat lower body.
 
+## WARNING:
+This avatar version uses Blockbench 5.0.0 and above! If you don't know what that means, you need to do research on the current state of Figura ASAP. I will not help you with this. I do not care if you need help with this. 
+
 ### Authors:
 - Total
 
