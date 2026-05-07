@@ -17,7 +17,7 @@ This avatar version uses Blockbench 5.0.0 and above! If you don't know what that
 ### Libraries:
 - Grandpa Scout (GSAnimBlend, GSCarrier)
 - Squishy (SquAPI)
-- Katt (OriginsAPI, KattArmor, DynamicCrosshair)
+- Katt (OriginsAPI, KattArmor)
 - Bitslayn (Gaze API)
 - 4P5 (GroundCheck)
 - Manuel (Molang Conversions)
