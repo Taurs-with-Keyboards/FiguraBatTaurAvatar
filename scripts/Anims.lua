@@ -13,9 +13,9 @@ local effects = require("scripts.SyncedVariables")
 local anims = animations.BatTaur
 
 -- Synced variables setup
-local idleStyle = sync.add(config:load("AnimsIdle"), 1)
-local armsMove  = sync.add(config:load("ArmsMove"), false)
-local isRest    = sync.add(false)
+local idleStyle = sync.new("AnimsIdle", 1):config()
+local armsMove  = sync.new("AnimsArms", false):config()
+local isRest    = sync.new("AnimsRest", false)
 
 -- Ground idles table
 local idles = {
@@ -25,11 +25,11 @@ local idles = {
 }
 
 -- Reset IdleStyle if its out of range
-if sync[idleStyle] > #idles then sync[idleStyle] = 1 end
+if idleStyle.curr > #idles then idleStyle.curr = 1 end
 
 -- Arms setup
-local leftArmLerp  = lerp:new(sync[armsMove] and 1 or 0, 0.5)
-local rightArmLerp = lerp:new(sync[armsMove] and 1 or 0, 0.5)
+local leftArmLerp  = lerp.new(armsMove.curr and 1 or 0, 0.5)
+local rightArmLerp = lerp.new(armsMove.curr and 1 or 0, 0.5)
 
 -- Gets the origin rotation of a part, clamped
 local function getOriginRot(part, delta)
@@ -83,13 +83,13 @@ function events.TICK()
 	canRest = vel:length() < 0.05 and not block:isAir()
 	
 	-- Stop rest animation
-	if not canRest then
-		sync[isRest] = false
+	if isRest.curr and not canRest then
+		isRest:update(false)
 	end
 	
 	-- Animation states
-	local resting = restData == 1 or sync[isRest]
-	local flyIdle = idles[sync[idleStyle]] == anims.flying and not (pose.swim or pose.sleep or resting)
+	local resting = restData == 1 or isRest.curr
+	local flyIdle = idles[idleStyle.curr] == anims.flying and not (pose.swim or pose.sleep or resting)
 	local flying = (flyIdle and onGround) or (not onGround or effects.cF) and not (pose.swim or pose.elytra or resting)
 	local flapping = flying or (pose.swim and not pose.crawl) or pose.elytra
 	local groundIdle = flying and flyIdle or onGround and not (pose.swim or pose.crawl or pose.sleep or effects.cF or resting)
@@ -98,7 +98,7 @@ function events.TICK()
 	
 	-- Reset idle anims
 	for i, anim in ipairs(idles) do
-		if anim:isPlaying() and i ~= sync[idleStyle] and not (anim == anims.flying and flying) then
+		if anim:isPlaying() and i ~= idleStyle.curr and not (anim == anims.flying and flying) then
 			anim:stop()
 		end
 	end
@@ -106,7 +106,7 @@ function events.TICK()
 	-- Animations
 	anims.flying:playing(flying)
 	anims.flap:playing(flapping)
-	idles[sync[idleStyle]]:playing(groundIdle)
+	idles[idleStyle.curr]:playing(groundIdle)
 	anims.groundWalk:playing(groundWalk)
 	anims.resting:playing(resting)
 	anims.sleep:playing(sleep)
@@ -129,8 +129,8 @@ function events.TICK()
 	local armShouldMove = pose.swim or pose.crawl or pose.climb
 	
 	-- Arms movement targets
-	leftArmLerp.target  = (sync[armsMove] or armShouldMove or swingL or usingL or bow) and 0 or -1
-	rightArmLerp.target = (sync[armsMove] or armShouldMove or swingR or usingR or bow) and 0 or -1
+	leftArmLerp.target  = (armsMove.curr or armShouldMove or swingL or usingL or bow) and 0 or -1
+	rightArmLerp.target = (armsMove.curr or armShouldMove or swingR or usingR or bow) and 0 or -1
 	
 end
 
@@ -154,7 +154,7 @@ function events.RENDER(delta, context)
 	anims.flap:blend(pose.elytra and math.clamp(1 - vel:length() / 2, 0, 1) or 1)
 	
 	-- Resting variables
-	if restData == 1 or sync[isRest] then
+	if restData == 1 or isRest.curr then
 		
 		-- Variables
 		local pos = player:getPos(delta)
@@ -229,38 +229,22 @@ for _, blend in ipairs(blendAnims) do
 	end
 end
 
--- Toggle rest anim
-function pings.animPlayRest(boolean)
-	
-	sync[isRest] = boolean
-	
-end
-
--- Idle stance selector
-function pings.setIdleStyle(i)
-	
-	sync[idleStyle] = ((sync[idleStyle] + i - 1) % #idles) + 1
-	config:save("AnimsIdle", sync[idleStyle])
-	
-end
-
--- Arm movement toggle
-function pings.setAnimsArmsMove(boolean)
-	
-	sync[armsMove] = boolean
-	config:save("ArmsMove", sync[armsMove])
-	
-end
-
 -- Host only instructions
 if not host:isHost() then return end
 
--- Keybinds
-local restKeybind = keybinds:newKeybind("Rest Animation", "key.keyboard.keypad.1")
-	:onPress(function() pings.animPlayRest(not sync[isRest]) end)
+-- Required script
+local keybound = require("lib.Keybound")
 
--- Sync config keybinds
-sync.keybind(restKeybind, "AnimRestKeybind")
+-- Setup keybind
+local restKeybind = keybound.new(
+	keybinds
+		:newKeybind("Rest Animation", "key.keyboard.keypad.1")
+		:onPress(function()
+			if not canRest then return end
+			isRest:update(not isRest.curr)
+		end),
+	"AnimRestKeybind"
+)
 
 -- Required script
 local s, wheel, c = pcall(require, "scripts.ActionWheel")
@@ -283,21 +267,31 @@ if not pageExists then
 		:onLeftClick(function() wheel:descend(animsPage) end)
 end
 
+-- Set idle stance
+local function setIdle(i)
+	return ((idleStyle.curr + i - 1) % #idles) + 1
+end
+
 a.restAct = animsPage:newAction()
 	:item("black_bed")
-	:onToggle(pings.animPlayRest)
+	:onToggle(function(bool)
+		if not canRest then return end
+		isRest:update(bool)
+	end)
 
 a.idleAct = animsPage:newAction()
 	:item("scaffolding")
-	:onLeftClick(function() pings.setIdleStyle(1) end)
-	:onRightClick(function() pings.setIdleStyle(-1) end)
-	:onScroll(pings.setIdleStyle)
+	:onLeftClick(function() idleStyle:update(setIdle(1)) end)
+	:onRightClick(function() idleStyle:update(setIdle(-1)) end)
+	:onScroll(function(x) idleStyle:update(setIdle(x), 10) end)
 
 a.armsAct = animsPage:newAction()
 	:item("red_dye")
 	:toggleItem("rabbit_foot")
-	:onToggle(pings.setAnimsArmsMove)
-	:toggled(sync[armsMove])
+	:onToggle(function(bool)
+		armsMove:update(bool)
+	end)
+	:toggled(armsMove.curr)
 
 -- Update actions
 function events.RENDER(delta, context)
@@ -318,7 +312,7 @@ function events.RENDER(delta, context)
 					{text = canRest and "" or "\n\nUnable to rest! Slow down and make sure blocks are above you!", color = "gold"}
 				}
 			))
-			:toggled(sync[isRest])
+			:toggled(isRest.curr)
 		
 		a.idleAct
 			:title(toJson(
@@ -327,7 +321,7 @@ function events.RENDER(delta, context)
 					{text = "Idle Animation Type", bold = true, color = c.primary},
 					{text = "\n\nChoose your idle pose/animation from "..#idles.." option"..(#idles == 1 and "" or "s")..".", color = c.secondary},
 					{text = #idles > 1 and "\n\nCurrent Pose: " or "", bold = true, color = c.secondary},
-					{text = #idles > 1 and idles[sync[idleStyle]]:getName():gsub("^%l", string.upper) or ""}
+					{text = #idles > 1 and idles[idleStyle.curr]:getName():gsub("^%l", string.upper) or ""}
 				}
 			))
 		

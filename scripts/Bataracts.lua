@@ -7,11 +7,10 @@ if not host:isHost() then return end
 -- Required scripts
 local s, wheel, c = pcall(require, "scripts.ActionWheel")
 if not s then return end -- Kills script early if ActionWheel.lua isnt found
-local sync    = require("lib.LetThatSyncFig")
 local origins = require("lib.OriginsAPI")
 
 -- Variables
-local blind = sync.pick(config:load("BlindState"), 1)
+local blind = config:load("BlindState") or 1
 local postEffect = client:hasResource("shaders/post/blobs2.json") and "blobs2" or client:hasResource("shaders/post/blur.json") and "blur"
 local power = false
 local timer = 0

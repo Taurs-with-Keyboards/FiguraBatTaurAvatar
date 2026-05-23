@@ -11,19 +11,20 @@ end
 if not host:isHost() then return end
 
 -- Required scripts
-local origins = require("lib.OriginsAPI")
-local sync    = require("lib.LetThatSyncFig")
+local origins  = require("lib.OriginsAPI")
+local keybound = require("lib.Keybound")
 
 -- Variables
 local power = false
 local cooldown = 0
 
--- Keybinds
-local screechKeybind = keybinds:newKeybind("Bat Screech", "key.keyboard.keypad.2")
-	:onPress(function() if power then host:setActionbar("Hey! Your origin has a button for this! Use that instead!") return end pings.playBatScreech() cooldown = 30 end)
-
--- Sync config keybinds
-sync.keybind(screechKeybind, "ScreechKeybind")
+-- Setup keybind
+local screechKeybind = keybound.new(
+	keybinds
+		:newKeybind("Bat Screech", "key.keyboard.keypad.2")
+		:onPress(function() if power then host:setActionbar("Hey! Your origin has a button for this! Use that instead!") return end pings.playBatScreech() cooldown = 30 end),
+	"ScreechKeybind"
+)
 
 function events.TICK()
 	

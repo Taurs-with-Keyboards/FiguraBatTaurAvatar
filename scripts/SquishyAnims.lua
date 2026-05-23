@@ -10,7 +10,7 @@ local sync  = require("lib.LetThatSyncFig")
 local anims = animations.BatTaur
 
 -- Synced variables setup
-local earFlick = sync.add(config:load("SquapiEarFlick"), true)
+local earFlick = sync.new("AnimsEarFlicks", true):config()
 
 -- Calculate parent's rotations
 local function calculateParentRot(m)
@@ -30,7 +30,7 @@ local ears = squapi.ear:new(
 	0,              -- Range Multiplier (0)
 	false,          -- Horizontal (false)
 	2,              -- Bend Strength (2)
-	sync[earFlick], -- Do Flick (earFlick)
+	earFlick.curr,  -- Do Flick (earFlick)
 	400,            -- Flick Chance (400)
 	0.05,           -- Stiffness (0.05)
 	0.9             -- Bounce (0.9)
@@ -59,7 +59,7 @@ local headTilt     = head.tilt
 function events.TICK()
 	
 	-- Control ear flick based on variables
-	ears.doEarFlick = sync[earFlick]
+	ears.doEarFlick = earFlick.curr
 	
 	-- Control lean based on resting
 	for i in ipairs(head.strength) do
@@ -81,14 +81,6 @@ function events.RENDER(delta, context)
 			group:rot(-calculateParentRot(group:getParent()))
 		end
 	end
-	
-end
-
--- Ear flick toggle
-function pings.setSquapiEarFlick(boolean)
-	
-	sync[earFlick] = boolean
-	config:save("SquapiEarFlick", sync[earFlick])
 	
 end
 
@@ -120,8 +112,10 @@ end
 a.earsAct = animsPage:newAction()
 	:item("bone")
 	:toggleItem("feather")
-	:onToggle(pings.setSquapiEarFlick)
-	:toggled(sync[earFlick])
+	:onToggle(function(bool)
+		earFlick:update(bool)
+	end)
+	:toggled(earFlick.curr)
 
 -- Update actions
 function events.RENDER(delta, context)
