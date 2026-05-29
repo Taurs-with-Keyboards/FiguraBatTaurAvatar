@@ -20,7 +20,7 @@ This avatar version uses Blockbench 5.0.0 and above! If you don't know what that
 - Katt (OriginsAPI, KattArmor)
 - Bitslayn (Gaze API)
 - 4P5 (GroundCheck)
-- Manuel (Molang Conversions)
+- Manuel (Molang Conversions, OriginsAPI)
 - Auria (Molang Conversions)
 
 ### Origin Datapack:

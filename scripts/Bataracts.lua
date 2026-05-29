@@ -41,8 +41,8 @@ function events.TICK()
 		
 	end
 	
-	-- Check for power
-	power = origins.hasPower(player, "battaur:echolocation")
+	-- Origins power
+	power = origins.getPowerData(player)["battaur:echolocation"]
 	
 	if power then
 		

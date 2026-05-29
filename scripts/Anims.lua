@@ -77,7 +77,7 @@ function events.TICK()
 	local block, hitPos = raycast:block(pos, pos + vec(0, 10, 0))
 	
 	-- Origins power
-	restData = origins.getPowerData(player, "battaur:ceiling_snoozer_toggle") or 0
+	restData = origins.getPowerData(player)["battaur:ceiling_snoozer_toggle"] or 0
 	
 	-- Animation action
 	canRest = vel:length() < 0.05 and not block:isAir()
