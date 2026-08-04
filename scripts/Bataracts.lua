@@ -5,7 +5,7 @@
 if not host:isHost() then return end
 
 -- Required scripts
-local s, pageNav, acts, c = pcall(require, "scripts.ActionWheel")
+local s, pageNav, acts, colors = pcall(require, "scripts.ActionWheel")
 if not s then return end -- Kills script early if ActionWheel.lua isnt found
 local origins = require("lib.OriginsAPI")
 
@@ -163,17 +163,17 @@ function events.RENDER(delta, context)
 			:title(toJson(
 				{
 					"",
-					{text = "Blindness\n\n", bold = true, color = c.primary},
-					{text = "While bats aren\'t actually blind, who says you can\'t be?\n\n", color = c.secondary},
-					{text = "Current configuration: ", bold = true, color = c.secondary},
+					{text = "Blindness\n\n", bold = true, color = colors.primary},
+					{text = "While bats aren\'t actually blind, who says you can\'t be?\n\n", color = colors.secondary},
+					{text = "Current configuration: ", bold = true, color = colors.secondary},
 					{text = actionSetup.title.label.text, color = actionSetup.title.label.color},
 					{text = " | "},
-					{text = actionSetup.title.text, color = c.secondary}
+					{text = actionSetup.title.text, color = colors.secondary}
 				}
 			))
-			:color(actionSetup.color or c.active)
+			:color(actionSetup.color or colors.active)
 			:item(actionSetup.item)
-			:hoverColor(c.hover)
+			:hoverColor(colors.hover)
 		
 	end
 	
