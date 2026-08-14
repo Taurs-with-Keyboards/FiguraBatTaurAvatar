@@ -3,11 +3,14 @@ local parts   = require("lib.PartsAPI")
 local ground  = require("lib.GroundCheck")
 local effects = require("scripts.SyncedVariables")
 
+-- Parts setup
+local bat = parts.new(models.BatTaur)
+
 -- Variable
 local wasGround = false
 
 -- Find all ground parts
-local groundParts = parts:createTable(function(part) return part:getName():find("Ground") end)
+local groundParts = bat:createGroup(function(part) return part:getName():find("Ground") end)
 
 -- Stop script if ground parts could not be found
 if #groundParts == 0 then return end

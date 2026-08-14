@@ -3,6 +3,9 @@ local parts    = require("lib.PartsAPI")
 local batArmor = require("lib.KattArmor")()
 local sync     = require("lib.LetThatSyncFig")
 
+-- Parts setup
+local bat = parts.new(models.BatTaur)
+
 -- Synced variables setup
 local helmet     = sync.new("ArmorHelmet", true):config()
 local chestplate = sync.new("ArmorChestplate", true):config()
@@ -14,17 +17,17 @@ batArmor.Armor.Leggings:setLayer(1)
 
 -- Armor parts
 batArmor.Armor.Leggings
-	:addParts(table.unpack(parts:createTable(function(part) return part:getName() == "Leggings" end)))
-	:addTrimParts(table.unpack(parts:createTable(function(part) return part:getName() == "LeggingsTrim" end)))
+	:addParts(bat:createGroup(function(part) return part:getName() == "Leggings" end))
+	:addTrimParts(bat:createGroup(function(part) return part:getName() == "LeggingsTrim" end))
 batArmor.Armor.Boots
-	:addParts(table.unpack(parts:createTable(function(part) return part:getName() == "Boot" end)))
-	:addTrimParts(table.unpack(parts:createTable(function(part) return part:getName() == "BootTrim" end)))
+	:addParts(bat:createGroup(function(part) return part:getName() == "Boot" end))
+	:addTrimParts(bat:createGroup(function(part) return part:getName() == "BootTrim" end))
 
 -- Leather armor
 batArmor.Materials.leather
 	:setTexture(textures["textures.armor.leatherArmor"] or textures["BatTaur.leatherArmor"])
-	:addParts(batArmor.Armor.Leggings, table.unpack(parts:createTable(function(part) return part:getName() == "LeggingsLeather" end)))
-	:addParts(batArmor.Armor.Boots,    table.unpack(parts:createTable(function(part) return part:getName() == "BootLeather" end)))
+	:addParts(batArmor.Armor.Leggings, bat:createGroup(function(part) return part:getName() == "LeggingsLeather" end))
+	:addParts(batArmor.Armor.Boots,    bat:createGroup(function(part) return part:getName() == "BootLeather" end))
 
 -- Chainmail armor
 batArmor.Materials.chainmail
@@ -76,55 +79,58 @@ for _, trim in ipairs(trims) do
 	end
 end
 
--- Helmet parts
-local helmetGroups = {
-	
-	vanilla_model.HELMET
-	
-}
-
--- Chestplate parts
-local chestplateGroups = {
-	
-	vanilla_model.CHESTPLATE
-	
-}
-
--- Leggings parts
-local leggingsGroups = {
-	
-	table.unpack(parts:createTable(function(part) return part:getName():find("ArmorLeggings") end))
-	
-}
-
--- Boots parts
-local bootsGroups = {
-	
-	table.unpack(parts:createTable(function(part) return part:getName():find("ArmorBoot") end))
-	
+-- Armor parts
+---@type table<SyncObject, {
+--- slot: integer | nil,
+--- show: (ModelPart | VanillaModelGroup)[],
+--- hide: (ModelPart | VanillaModelGroup)[],
+--- }>
+local armorGroups = {
+	[helmet] = {
+		slot = 6,
+		show = {vanilla_model.HELMET},
+		hide = {bat.outliner.Ears}
+	},
+	[chestplate] = {
+		slot = 5,
+		show = {vanilla_model.CHESTPLATE},
+		hide = {}
+	},
+	[leggings] = {
+		slot = 4,
+		show = {bat:createGroup(function(part) return part:getName():find("ArmorLeggings") end)},
+		hide = {}
+	},
+	[boots] = {
+		slot = 3,
+		show = {bat:createGroup(function(part) return part:getName():find("ArmorBoot") end)},
+		hide = {}
+	}
 }
 
 function events.RENDER(delta, context)
 	
-	-- Apply
-	for _, part in ipairs(helmetGroups) do
-		part:visible(helmet.curr)
+	-- Toggle armor
+	for obj, armorParts in pairs(armorGroups) do
+		
+		-- State of toggle
+		local state = obj.curr
+		
+		-- Show parts when armor equipped
+		local show = armorParts.show
+		local showState = state
+		for i = 1, #show do
+			show[i]:visible(showState)
+		end
+		
+		-- Hide parts when armor equipped
+		local hide = armorParts.hide
+		local hideState = not (state and (armorParts.slot == nil or player:getItem(armorParts.slot).id ~= "minecraft:air"))
+		for i = 1, #hide do
+			hide[i]:visible(hideState)
+		end
+		
 	end
-	
-	for _, part in ipairs(chestplateGroups) do
-		part:visible(chestplate.curr)
-	end
-	
-	for _, part in ipairs(leggingsGroups) do
-		part:visible(leggings.curr)
-	end
-	
-	for _, part in ipairs(bootsGroups) do
-		part:visible(boots.curr)
-	end
-	
-	-- Hide ears when wearing helmet
-	parts.group.Ears:visible(not (sync[helmet] and player:getItem(6).id ~= "minecraft:air"))
 	
 end
 
@@ -136,10 +142,10 @@ local function equipSound()
 end
 
 -- Apply sound to sync updates
-helmet:addFunc(equipSound)
-chestplate:addFunc(equipSound)
-leggings:addFunc(equipSound)
-boots:addFunc(equipSound)
+helmet:addFuncs(equipSound)
+chestplate:addFuncs(equipSound)
+leggings:addFuncs(equipSound)
+boots:addFuncs(equipSound)
 
 -- Host only instructions
 if not host:isHost() then return end
