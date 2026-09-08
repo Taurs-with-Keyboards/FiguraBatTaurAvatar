@@ -134,7 +134,7 @@ local blindInfo = {
 	{
 		title = {label = {text = "Not Blind", color = "green"}, text = "20/20 Vision"},
 		item  = "ender_eye",
-		color = "000000"
+		color = vectors.hexToRGB("#000000")
 	},
 	{
 		title = {label = {text = "Echolocation", color = "yellow"}, text = "Blind, unless you scream!\n(Check your keybinds for screaming options!)"},
@@ -150,7 +150,8 @@ local blindInfo = {
 	},
 	{
 		title = {label = {text = "Missing post effect!", color = "dark_red"}, text = "Resource missing!\nYour minecraft version or resource pack is missing the effect!"},
-		item  = "barrier"
+		item  = "barrier",
+		color = vectors.hexToRGB("#FF0000")
 	}
 }
 
