@@ -10,9 +10,12 @@ end
 -- Host only instructions
 if not host:isHost() then return end
 
--- Required scripts
+-- Required script
+local keyboundSuccess = pcall(require, "lib.Keybound")
+if not keyboundSuccess then return end
+
+-- Required script
 local origins  = require("lib.OriginsAPI")
-local keybound = require("lib.Keybound")
 
 -- Variable
 local cooldown = 0
@@ -39,25 +42,22 @@ local function createCooldown()
 end
 
 -- Setup keybind
-keybound.new(
-	keybinds
-		:newKeybind("Bat Screech", "key.keyboard.keypad.2")
-		:onPress(function()
-			
-			-- If player is dead, return early
-			if player:getDeathTime() ~= 0 then return end
-			
-			-- If power exist, return early
-			if origins.getPowerData(player)["battaur:echolocation"] then
-				host:setActionbar("Hey! Your origin has a button for this! Use that instead!")
-			end
-			
-			-- If no cooldown, preform functions
-			if cooldown == 0 then
-				pings.playBatScreech()
-				createCooldown()
-			end
-			
-		end),
-	"ScreechKeybind"
-)
+keybinds:newKeybind("Bat Screech", "key.keyboard.keypad.2")
+	:config("ScreechKeybind")
+	:onPress(function()
+		
+		-- If player is dead, return early
+		if player:getDeathTime() ~= 0 then return end
+		
+		-- If power exist, return early
+		if origins.getPowerData(player)["battaur:echolocation"] then
+			host:setActionbar("Hey! Your origin has a button for this! Use that instead!")
+		end
+		
+		-- If no cooldown, preform functions
+		if cooldown == 0 then
+			pings.playBatScreech()
+			createCooldown()
+		end
+		
+	end)

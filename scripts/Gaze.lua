@@ -2,6 +2,9 @@
 local gaze  = require("lib.Gaze")
 local parts = require("lib.PartsAPI")
 
+-- Parts setup
+local bat = parts.new(models.BatTaur)
+
 -- Animations setup
 local anims = animations.BatTaur
 
@@ -21,7 +24,7 @@ earsGaze.config.lookInterval = 10
 function events.RENDER()
 	
 	-- Flips the rotation of the gaze ears when upside down
-	local flip = math.map(parts.group.Player:getAnimRot().z, 0, 180, 1, -1)
+	local flip = math.map(bat.outliner.Player:getAnimRot().z, 0, 180, 1, -1)
 	anims.horizontalEars:blend(flip)
 	anims.verticalEars:blend(flip)
 	

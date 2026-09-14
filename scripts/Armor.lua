@@ -3,6 +3,9 @@ local parts    = require("lib.PartsAPI")
 local batArmor = require("lib.KattArmor")()
 local sync     = require("lib.LetThatSyncFig")
 
+-- Parts setup
+local bat = parts.new(models.BatTaur)
+
 -- Synced variables setup
 local helmet     = sync.new("ArmorHelmet", true):config()
 local chestplate = sync.new("ArmorChestplate", true):config()
@@ -14,17 +17,17 @@ batArmor.Armor.Leggings:setLayer(1)
 
 -- Armor parts
 batArmor.Armor.Leggings
-	:addParts(table.unpack(parts:createTable(function(part) return part:getName() == "Leggings" end)))
-	:addTrimParts(table.unpack(parts:createTable(function(part) return part:getName() == "LeggingsTrim" end)))
+	:addParts(table.unpack(bat:createTable(function(part) return part:getName() == "Leggings" end)))
+	:addTrimParts(table.unpack(bat:createTable(function(part) return part:getName() == "LeggingsTrim" end)))
 batArmor.Armor.Boots
-	:addParts(table.unpack(parts:createTable(function(part) return part:getName() == "Boot" end)))
-	:addTrimParts(table.unpack(parts:createTable(function(part) return part:getName() == "BootTrim" end)))
+	:addParts(table.unpack(bat:createTable(function(part) return part:getName() == "Boot" end)))
+	:addTrimParts(table.unpack(bat:createTable(function(part) return part:getName() == "BootTrim" end)))
 
 -- Leather armor
 batArmor.Materials.leather
 	:setTexture(textures["textures.armor.leatherArmor"] or textures["BatTaur.leatherArmor"])
-	:addParts(batArmor.Armor.Leggings, table.unpack(parts:createTable(function(part) return part:getName() == "LeggingsLeather" end)))
-	:addParts(batArmor.Armor.Boots,    table.unpack(parts:createTable(function(part) return part:getName() == "BootLeather" end)))
+	:addParts(batArmor.Armor.Leggings, table.unpack(bat:createTable(function(part) return part:getName() == "LeggingsLeather" end)))
+	:addParts(batArmor.Armor.Boots,    table.unpack(bat:createTable(function(part) return part:getName() == "BootLeather" end)))
 
 -- Chainmail armor
 batArmor.Materials.chainmail
@@ -94,14 +97,14 @@ local chestplateGroups = {
 -- Leggings parts
 local leggingsGroups = {
 	
-	table.unpack(parts:createTable(function(part) return part:getName():find("ArmorLeggings") end))
+	table.unpack(bat:createTable(function(part) return part:getName():find("ArmorLeggings") end))
 	
 }
 
 -- Boots parts
 local bootsGroups = {
 	
-	table.unpack(parts:createTable(function(part) return part:getName():find("ArmorBoot") end))
+	table.unpack(bat:createTable(function(part) return part:getName():find("ArmorBoot") end))
 	
 }
 
@@ -125,7 +128,7 @@ function events.RENDER()
 	end
 	
 	-- Hide ears when wearing helmet
-	parts.group.Ears:visible(not (sync[helmet] and player:getItem(6).id ~= "minecraft:air"))
+	bat.outliner.Ears:visible(not (sync[helmet] and player:getItem(6).id ~= "minecraft:air"))
 	
 end
 
@@ -137,10 +140,10 @@ local function equipSound()
 end
 
 -- Apply sound to sync updates
-helmet:addFunc(equipSound)
-chestplate:addFunc(equipSound)
-leggings:addFunc(equipSound)
-boots:addFunc(equipSound)
+helmet:addFuncs(equipSound)
+chestplate:addFuncs(equipSound)
+leggings:addFuncs(equipSound)
+boots:addFuncs(equipSound)
 
 -- Host only instructions
 if not host:isHost() then return end

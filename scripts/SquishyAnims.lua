@@ -6,6 +6,9 @@ if not squishyStatus then return {} end
 local parts = require("lib.PartsAPI")
 local sync  = require("lib.LetThatSyncFig")
 
+-- Parts setup
+local bat = parts.new(models.BatTaur)
+
 -- Animation setup
 local anims = animations.BatTaur
 
@@ -25,8 +28,8 @@ end
 
 -- Squishy ears
 local ears = squapi.ear:new(
-	parts.group.LeftEar,
-	parts.group.RightEar,
+	bat.outliner.LeftEar,
+	bat.outliner.RightEar,
 	0,              -- Range Multiplier (0)
 	false,          -- Horizontal (false)
 	2,              -- Bend Strength (2)
@@ -39,7 +42,7 @@ local ears = squapi.ear:new(
 -- Head table
 local headParts = {
 	
-	parts.group.UpperBody
+	bat.outliner.UpperBody
 	
 }
 
@@ -72,14 +75,14 @@ end
 function events.RENDER()
 	
 	-- Set the upper body to offset rot and crouching pivot point
-	parts.group.UpperBody:rot(-parts.group.LowerBody:getRot())
+	bat.outliner.UpperBody:rot(-bat.outliner.LowerBody:getRot())
 	
 	-- Offset smooth torso in various parts
 	-- Note: acts strangely with `parts.group.body`
-	local bodyChildren = parts.group.UpperBody:getChildren()
+	local bodyChildren = bat.outliner.UpperBody:getChildren()
 	for i = 1, #bodyChildren do
 		local group = bodyChildren[i]
-		if group ~= parts.group.Body then
+		if group ~= bat.outliner.Body then
 			group:rot(-calculateParentRot(group:getParent()))
 		end
 	end

@@ -2,31 +2,42 @@
 local parts = require("lib.PartsAPI")
 local sync  = require("lib.LetThatSyncFig")
 
+-- Parts setup
+local bat = parts.new(models.BatTaur)
+
 -- Synced variables setup
 local skin = sync.new("AvatarVanillaSkin", true):config()
 local slim = sync.new("AvatarSlim", false):config()
 
--- Reenabled parts
-parts.group.Skull   :visible(true)
-parts.group.Portrait:visible(true)
+-- Skull setup
+bat:deepCopy(bat.outliner.Head)
+	:moveTo(bat.outliner.BatTaur)
+	:parentType("SKULL")
+	:pos(-bat.outliner.Head:getPivot())
+
+-- Portrait setup
+bat:deepCopy(bat.outliner.Head)
+	:moveTo(bat.outliner.BatTaur)
+	:parentType("PORTRAIT")
+	:pos(-bat.outliner.Head:getPivot())
 
 -- Arm parts
-local defaultParts = parts:createTable(function(part) return part:getName():find("ArmDefault") end)
-local slimParts    = parts:createTable(function(part) return part:getName():find("ArmSlim")    end)
+local defaultParts = bat:createTable(function(part) return part:getName():find("ArmDefault") end)
+local slimParts    = bat:createTable(function(part) return part:getName():find("ArmSlim")    end)
 
 -- Vanilla skin parts
-local skinParts = parts:createTable(function(part) return part:getName():find("_[sS]kin") end)
+local skinParts = bat:createTable(function(part) return part:getName():find("_[sS]kin") end)
 
 -- Layer parts
 local layerTypes = {"HAT", "JACKET", "LEFT_SLEEVE", "RIGHT_SLEEVE", "LEFT_PANTS_LEG", "RIGHT_PANTS_LEG", "CAPE"}
 local layerParts = {}
 for i = 1, #layerTypes do
 	local type = layerTypes[i]
-	layerParts[type] = parts:createTable(function(part) return part:getName():find(type) end)
+	layerParts[type] = bat:createTable(function(part) return part:getName():find(type) end)
 end
 
 -- Apply translucent cull
-local flatParts = parts:createTable(function(part) return part:getName():find("_[fF]lat") end)
+local flatParts = bat:createTable(function(part) return part:getName():find("_[fF]lat") end)
 for i = 1, #flatParts do
 	flatParts[i]:primaryRenderType("TRANSLUCENT_CULL")
 end
@@ -52,10 +63,10 @@ function events.RENDER(_, context)
 	
 	-- First person arms toggle
 	local firstPerson = context == "FIRST_PERSON"
-	parts.group.LeftArm:visible(not firstPerson)
-	parts.group.RightArm:visible(not firstPerson)
-	parts.group.LeftArmFP:visible(firstPerson)
-	parts.group.RightArmFP:visible(firstPerson)
+	bat.outliner.LeftArm:visible(not firstPerson)
+	bat.outliner.RightArm:visible(not firstPerson)
+	bat.outliner.LeftArmFP:visible(firstPerson)
+	bat.outliner.RightArmFP:visible(firstPerson)
 	
 	-- Skin textures
 	local skinType = skin.curr and "SKIN" or "PRIMARY"
@@ -64,7 +75,7 @@ function events.RENDER(_, context)
 	end
 	
 	-- Cape textures
-	parts.group.Cape:primaryTexture(skin.curr and "CAPE" or "PRIMARY")
+	bat.outliner.Cape:primaryTexture(skin.curr and "CAPE" or "PRIMARY")
 	
 	-- Layer toggling
 	for layerType, vanillaParts in pairs(layerParts) do

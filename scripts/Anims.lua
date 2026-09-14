@@ -9,6 +9,9 @@ local ground  = require("lib.GroundCheck")
 local pose    = require("scripts.Posing")
 local effects = require("scripts.SyncedVariables")
 
+-- Parts setup
+local bat = parts.new(models.BatTaur)
+
 -- Animations setup
 local anims = animations.BatTaur
 
@@ -50,8 +53,8 @@ v.head = vec(0, 0, 0)
 -- Parrot pivots
 local parrots = {
 	
-	parts.group.LeftParrotPivot,
-	parts.group.RightParrotPivot
+	bat.outliner.LeftParrotPivot,
+	bat.outliner.RightParrotPivot
 	
 }
 
@@ -185,8 +188,8 @@ function events.RENDER(delta)
 	local idleRot   = vec(math.deg(math.sin(idleTimer * 0.067) * 0.05), 0, math.deg(math.cos(idleTimer * 0.09) * 0.05 + 0.05))
 	
 	-- Apply arm rotations
-	parts.group.LeftArm:offsetRot((getOriginRot("LEFT_ARM", delta) + idleRot) * leftArmLerp.currPos)
-	parts.group.RightArm:offsetRot((getOriginRot("RIGHT_ARM", delta) - idleRot) * rightArmLerp.currPos)
+	bat.outliner.LeftArm:offsetRot((getOriginRot("LEFT_ARM", delta) + idleRot) * leftArmLerp.currPos)
+	bat.outliner.RightArm:offsetRot((getOriginRot("RIGHT_ARM", delta) - idleRot) * rightArmLerp.currPos)
 	
 	-- Parrot rot offset
 	for i = 1, #parrots do
@@ -197,14 +200,14 @@ function events.RENDER(delta)
 	-- Crouch offset
 	local bodyRot = getOriginRot("BODY", delta)
 	local crouchPos = vec(0, -math.sin(math.rad(bodyRot.x)) * 2, -math.sin(math.rad(bodyRot.x)) * 12)
-	parts.group.Player:pos(crouchPos._y_)
-	parts.group.UpperBody:offsetPivot(crouchPos):pos(crouchPos.xy_ * 2)
-	parts.group.LowerBody:pos(crouchPos)
+	bat.outliner.Player:pos(crouchPos._y_ --[[@as Vector3]])
+	bat.outliner.UpperBody:offsetPivot(crouchPos):pos(crouchPos.xy_ * 2 --[[@as Vector3]])
+	bat.outliner.LowerBody:pos(crouchPos)
 	
 	-- Spyglass rotations
 	local headRot = getOriginRot("HEAD", delta)
 	headRot.x = math.clamp(headRot.x, -90, 30)
-	parts.group.Spyglass:offsetRot(headRot)
+	bat.outliner.Spyglass:offsetRot(headRot)
 		:pos(pose.crouch and vec(0, -4, 0) or nil)
 	
 end
@@ -231,19 +234,16 @@ end
 -- Host only instructions
 if not host:isHost() then return end
 
--- Required script
-local keybound = require("lib.Keybound")
-
 -- Setup keybind
-keybound.new(
-	keybinds
-		:newKeybind("Rest Animation", "key.keyboard.keypad.1")
+local keyboundSuccess = pcall(require, "lib.Keybound")
+if keyboundSuccess then
+	keybinds:newKeybind("Rest Animation", "key.keyboard.keypad.1")
+		:config("AnimRestKeybind")
 		:onPress(function()
 			if not canRest then return end
 			isRest:update(not isRest.curr)
-		end),
-	"AnimRestKeybind"
-)
+		end)
+end
 
 -- Required script
 local s, pageNav, acts, colors = pcall(require, "scripts.ActionWheel")
