@@ -42,7 +42,7 @@ local function createCooldown()
 end
 
 -- Setup keybind
-local screechKeybind = keybinds:newKeybind("Bat Screech", "key.keyboard.keypad.2")
+keybinds:newKeybind("Bat Screech", "key.keyboard.keypad.2")
 	:config("ScreechKeybind")
 	:onPress(function()
 		

@@ -75,7 +75,7 @@ function events.TICK()
 	local pos = player:getPos()
 	local vel = player:getVelocity()
 	local onGround = ground()
-	local block, hitPos = raycast:block(pos, pos + vec(0, 10, 0))
+	local block = raycast:block(pos, pos + vec(0, 10, 0))
 	
 	-- Origins power
 	restData = origins.getPowerData(player)["battaur:ceiling_snoozer_toggle"] or 0
@@ -136,7 +136,7 @@ function events.TICK()
 	
 end
 
-function events.RENDER(delta, context)
+function events.RENDER(delta)
 	
 	-- Variables
 	local vel = player:getVelocity()
@@ -145,8 +145,6 @@ function events.RENDER(delta, context)
 	
 	-- Directional velocity
 	local fbVel = vel:dot((dir.x_z):normalized())
-	local lrVel = vel:crossed(dir.x_z:normalized()).y
-	local udVel = vel.y
 	
 	-- Animation speeds
 	anims.flap:speed((pose.elytra and math.clamp(1 - vel:length() / 2, 0, 1) or pose.swim and math.clamp(vel:length() * 4, 0, 1) or 1) * (player:isInWater() and 0.5 or 1))
@@ -160,7 +158,7 @@ function events.RENDER(delta, context)
 		
 		-- Variables
 		local pos = player:getPos(delta)
-		local block, hitPos = raycast:block(pos, pos + vec(0, 10, 0))
+		local _, hitPos = raycast:block(pos, pos + vec(0, 10, 0))
 		
 		-- Pehkui scaling
 		local nbt   = player:getNbt()
@@ -239,7 +237,7 @@ if not host:isHost() then return end
 -- Setup keybind
 local keyboundSuccess = pcall(require, "lib.Keybound")
 if keyboundSuccess then
-	local restKeybind = keybinds:newKeybind("Rest Animation", "key.keyboard.keypad.1")
+	keybinds:newKeybind("Rest Animation", "key.keyboard.keypad.1")
 		:config("AnimRestKeybind")
 		:onPress(function()
 			if not canRest then return end
@@ -292,7 +290,7 @@ acts.animsArmsToggle = animsPage:newAction()
 	:toggled(armsMove.curr)
 
 -- Update actions
-function events.RENDER(delta, context)
+function events.RENDER()
 	
 	if action_wheel:isEnabled() then
 		if acts.animsPage then

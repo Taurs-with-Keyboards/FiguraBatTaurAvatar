@@ -109,7 +109,7 @@ local armorGroups = {
 	}
 }
 
-function events.RENDER(delta, context)
+function events.RENDER()
 	
 	-- Toggle armor
 	for obj, armorParts in pairs(armorGroups) do
@@ -204,7 +204,7 @@ acts.armorBootsToggle = armorPage:newAction()
 	end)
 
 -- Update actions
-function events.RENDER(delta, context)
+function events.RENDER()
 	
 	if action_wheel:isEnabled() then
 		acts.armorPage

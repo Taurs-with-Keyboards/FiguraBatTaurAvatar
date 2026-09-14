@@ -1,6 +1,6 @@
 -- Kills script if squAPI cannot be found
 local s, squapi = pcall(require, "lib.SquAPI")
-if not s then return {} end
+if not s then return end
 
 -- Required scripts
 local parts = require("lib.PartsAPI")
@@ -72,7 +72,7 @@ function events.TICK()
 	
 end
 
-function events.RENDER(delta, context)
+function events.RENDER()
 	
 	-- Set the upper body to offset rot and crouching pivot point
 	bat.outliner.UpperBody:rot(-bat.outliner.LowerBody:getRot())
@@ -120,7 +120,7 @@ acts.animsEarsToggle = animsPage:newAction()
 	:toggled(earFlick.curr)
 
 -- Update actions
-function events.RENDER(delta, context)
+function events.RENDER()
 	
 	if action_wheel:isEnabled() then
 		if acts.animsPage then
