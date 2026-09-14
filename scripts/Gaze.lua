@@ -20,7 +20,7 @@ earsGaze.config.lookInterval = 10
 
 function events.RENDER(delta, context)
 	
-	-- Flips the rotation of the gaze ears when upsidedown
+	-- Flips the rotation of the gaze ears when upside down
 	local flip = math.map(parts.group.Player:getAnimRot().z, 0, 180, 1, -1)
 	anims.horizontalEars:blend(flip)
 	anims.verticalEars:blend(flip)

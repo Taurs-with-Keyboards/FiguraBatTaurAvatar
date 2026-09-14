@@ -101,7 +101,7 @@ function events.TICK()
 		
 	else
 		
-		-- If conditions arent met, legs are considered previously on ground
+		-- If conditions aren't met, legs are considered previously on ground
 		for i = 1, #groundParts do
 			wasGround[i] = true
 		end

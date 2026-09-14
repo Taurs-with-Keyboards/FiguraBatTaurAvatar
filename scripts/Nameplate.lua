@@ -20,7 +20,7 @@ function events.ENTITY_INIT()
 			:pivot(offset)
 			:scale(-parts.group.Player:getAnimRot().z / 90 + 1)
 		
-		-- Kill function early if the namePivot isnt found
+		-- Kill function early if the namePivot isn't found
 		if not namePivot then return end
 		
 		-- Get pose

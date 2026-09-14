@@ -71,7 +71,7 @@ end
 
 function events.RENDER(delta, context)
 	
-	-- Set upperbody to offset rot and crouching pivot point
+	-- Set the upper body to offset rot and crouching pivot point
 	parts.group.UpperBody:rot(-parts.group.LowerBody:getRot())
 	
 	-- Offset smooth torso in various parts
@@ -91,7 +91,7 @@ if not host:isHost() then return end
 
 -- Required scripts
 local s, pageNav, acts, colors = pcall(require, "scripts.ActionWheel")
-if not s then return end -- Kills script early if ActionWheel.lua isnt found
+if not s then return end -- Kills script early if ActionWheel.lua isn't found
 pcall(require, "scripts.Anims") -- Tries to find script, not required
 
 -- Check for if page already exists
