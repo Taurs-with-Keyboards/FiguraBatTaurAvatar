@@ -69,9 +69,9 @@ function events.RENDER(_, context)
 	bat.outliner.Cape:primaryTexture(skin.curr and "CAPE" or "PRIMARY")
 	
 	-- Layer toggling
-	for layerType, parts in pairs(layerParts) do
+	for layerType, vanillaParts in pairs(layerParts) do
 		local enabled = player:isSkinLayerVisible(layerType)
-		parts:visible(enabled)
+		vanillaParts:visible(enabled)
 	end
 	
 end

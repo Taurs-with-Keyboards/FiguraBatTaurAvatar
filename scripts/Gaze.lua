@@ -14,7 +14,7 @@ earsGaze:newAnim(
 	anims.horizontalEars,
 	anims.verticalEars
 )
-gaze:unsetPrimary(earsGaze)
+gaze:unsetPrimary()
 
 -- Gaze config
 earsGaze.config.socialInterest = 0

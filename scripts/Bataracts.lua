@@ -11,13 +11,13 @@ local origins = require("lib.OriginsAPI")
 
 -- Variables
 local blind = config:load("BlindState") or 1
-local postEffect = client:hasResource("shaders/post/blobs2.json") and "blobs2" or client:hasResource("shaders/post/blur.json") and "blur"
+local postEffect = client.hasResource("shaders/post/blobs2.json") and "blobs2" or client.hasResource("shaders/post/blur.json") and "blur" or nil
 local power = false
 local timer = 0
 
 -- Updates variable when resources are reloaded
 function events.RESOURCE_RELOAD()
-	postEffect = client:hasResource("shaders/post/blobs2.json") and "blobs2" or client:hasResource("shaders/post/blur.json") and "blur"
+	postEffect = client.hasResource("shaders/post/blobs2.json") and "blobs2" or client.hasResource("shaders/post/blur.json") and "blur"
 end
 
 -- Init state setup
