@@ -69,7 +69,7 @@ function events.TICK()
 	
 end
 
-function events.RENDER(delta, context)
+function events.RENDER()
 	
 	-- Set the upper body to offset rot and crouching pivot point
 	parts.group.UpperBody:rot(-parts.group.LowerBody:getRot())
@@ -117,7 +117,7 @@ acts.animsEarsToggle = animsPage:newAction()
 	:toggled(earFlick.curr)
 
 -- Update actions
-function events.RENDER(delta, context)
+function events.RENDER()
 	
 	if action_wheel:isEnabled() then
 		if acts.animsPage then

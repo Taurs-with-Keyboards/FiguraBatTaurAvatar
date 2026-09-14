@@ -41,7 +41,7 @@ local function inBox(pos, box_min, box_max)
 		   pos.z >= box_min.z and pos.z <= box_max.z
 end
 
-function events.ON_PLAY_SOUND(id, pos, vol, pitch, loop, cat, path)
+function events.ON_PLAY_SOUND(id, pos, _, _, _, _, path)
 	
 	-- Don't trigger if the sound was played by Figura (prevent potential infinite loop)
 	if not path then return end
@@ -62,7 +62,6 @@ end
 function events.TICK()
 	
 	-- Variables
-	local vel      = player:getVelocity()
 	local onGround = ground()
 	local inWater  = player:isInWater()
 	

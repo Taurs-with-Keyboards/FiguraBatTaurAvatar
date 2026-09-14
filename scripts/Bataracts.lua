@@ -5,7 +5,7 @@
 if not host:isHost() then return end
 
 -- Required scripts
-local s, pageNav, acts, colors = pcall(require, "scripts.ActionWheel")
+local s, _, acts, colors = pcall(require, "scripts.ActionWheel")
 if not s then return end -- Kills script early if ActionWheel.lua isn't found
 local origins = require("lib.OriginsAPI")
 
@@ -92,7 +92,7 @@ local function startCountdown()
 end
 
 -- Check if a bat makes a sound near the player
-function events.ON_PLAY_SOUND(id, pos, vol, pitch, loop, cat, path)
+function events.ON_PLAY_SOUND(id, pos)
 	
 	-- Don't do anything if not using the echolocation setting or the user isn't loaded
 	if blind ~= 2 or not player:isLoaded() then return end
@@ -156,7 +156,7 @@ local blindInfo = {
 }
 
 -- Update action
-function events.RENDER(delta, context)
+function events.RENDER()
 	
 	if action_wheel:isEnabled() then
 		local actionSetup = blindInfo[blind]

@@ -105,7 +105,7 @@ local bootsGroups = {
 	
 }
 
-function events.RENDER(delta, context)
+function events.RENDER()
 	
 	-- Apply
 	for i = 1, #helmetGroups do
@@ -198,7 +198,7 @@ acts.armorBootsToggle = armorPage:newAction()
 	end)
 
 -- Update actions
-function events.RENDER(delta, context)
+function events.RENDER()
 	
 	if action_wheel:isEnabled() then
 		acts.armorPage

@@ -18,7 +18,7 @@ earsGaze.config.socialInterest = 0
 earsGaze.config.soundInterest = 1
 earsGaze.config.lookInterval = 10
 
-function events.RENDER(delta, context)
+function events.RENDER()
 	
 	-- Flips the rotation of the gaze ears when upside down
 	local flip = math.map(parts.group.Player:getAnimRot().z, 0, 180, 1, -1)
