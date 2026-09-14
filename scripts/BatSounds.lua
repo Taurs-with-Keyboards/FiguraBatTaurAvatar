@@ -49,7 +49,7 @@ keybound.new(
 			
 			-- If power exist, return early
 			if origins.getPowerData(player)["battaur:echolocation"] then
-				return host:setActionbar("Hey! Your origin has a button for this! Use that instead!")
+				host:setActionbar("Hey! Your origin has a button for this! Use that instead!")
 			end
 			
 			-- If no cooldown, preform functions

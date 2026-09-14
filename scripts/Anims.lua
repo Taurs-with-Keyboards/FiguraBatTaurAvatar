@@ -141,7 +141,7 @@ function events.RENDER(delta)
 	local dir = vec(math.sin(math.rad(-yaw)), 0, math.cos(math.rad(-yaw)))
 	
 	-- Directional velocity
-	local fbVel = vel:dot((dir.x_z):normalized())
+	local fbVel = vel:dot((dir.x_z):normalized() --[[@as Vector3]])
 	
 	-- Animation speeds
 	anims.flap:speed((pose.elytra and math.clamp(1 - vel:length() / 2, 0, 1) or pose.swim and math.clamp(vel:length() * 4, 0, 1) or 1) * (player:isInWater() and 0.5 or 1))
