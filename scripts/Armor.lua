@@ -69,7 +69,8 @@ local trims = {
 }
 
 -- Apply trims
-for _, trim in ipairs(trims) do
+for i = 1, #trims do
+	local trim = trims[i]
 	local tex = textures["textures.armor.trims."..trim.."Trim"] or textures["BatTaur."..trim.."Trim"] or false
 	if tex then
 		batArmor.TrimPatterns[trim]:setTexture(tex)
@@ -107,20 +108,20 @@ local bootsGroups = {
 function events.RENDER(delta, context)
 	
 	-- Apply
-	for _, part in ipairs(helmetGroups) do
-		part:visible(helmet.curr)
+	for i = 1, #helmetGroups do
+		helmetGroups[i]:visible(helmet.curr)
 	end
 	
-	for _, part in ipairs(chestplateGroups) do
-		part:visible(chestplate.curr)
+	for i = 1, #chestplateGroups do
+		chestplateGroups[i]:visible(chestplate.curr)
 	end
 	
-	for _, part in ipairs(leggingsGroups) do
-		part:visible(leggings.curr)
+	for i = 1, #leggingsGroups do
+		leggingsGroups[i]:visible(leggings.curr)
 	end
 	
-	for _, part in ipairs(bootsGroups) do
-		part:visible(boots.curr)
+	for i = 1, #bootsGroups do
+		bootsGroups[i]:visible(boots.curr)
 	end
 	
 	-- Hide ears when wearing helmet

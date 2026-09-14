@@ -3,20 +3,16 @@ local parts   = require("lib.PartsAPI")
 local ground  = require("lib.GroundCheck")
 local effects = require("scripts.SyncedVariables")
 
--- Variable
-local wasGround = false
-
 -- Find all ground parts
 local groundParts = parts:createTable(function(part) return part:getName():find("Ground") end)
 
 -- Stop script if ground parts could not be found
 if #groundParts == 0 then return end
 
--- Setup groundParts table
-for k, i in ipairs(groundParts) do
-	
-	groundParts[k] = { part = i, wasGround = true }
-	
+-- Setup wasGround table
+local wasGround = {}
+for i = 1, #groundParts do
+	wasGround[i] = true
 end
 
 -- Play footstep sound
@@ -73,10 +69,10 @@ function events.TICK()
 	-- Play footsteps based on placement
 	if onGround and not (inWater or player:getVehicle() or effects.cF) then
 		
-		for _, leg in ipairs(groundParts) do
+		for i = 1, #groundParts do
 			
 			-- Block variables
-			local groundPos   = leg.part:partToWorldMatrix():apply()
+			local groundPos   = groundParts[i]:partToWorldMatrix():apply()
 			local blockPos    = groundPos:copy():floor()
 			local groundBlock = world.getBlockState(groundPos)
 			local groundBoxes = groundBlock:getCollisionShape()
@@ -84,41 +80,32 @@ function events.TICK()
 			-- Check for ground
 			local grounded = false
 			if groundBoxes then
-				for i = 1, #groundBoxes do
-					local box = groundBoxes[i]
+				for b = 1, #groundBoxes do
+					local box = groundBoxes[b]
 					if inBox(groundPos, blockPos + box[1], blockPos + box[2]) then
-						
 						grounded = true
 						break
-						
 					end
 				end
 			end
 			
 			-- Play footstep
-			if grounded and not leg.wasGround then
-				
+			if grounded and not wasGround[i] then
 				playFootstep(groundPos, groundBlock)
-				
 			end
 			
 			-- Store last ground
-			leg.wasGround = grounded
+			wasGround[i] = grounded
 			
 		end
 		
 	else
 		
 		-- If conditions arent met, legs are considered previously on ground
-		for _, leg in ipairs(groundParts) do
-			
-			leg.wasGround = true
-			
+		for i = 1, #groundParts do
+			wasGround[i] = true
 		end
 		
 	end
-	
-	-- Store last ground
-	wasGround = onGround
 	
 end

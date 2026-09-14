@@ -62,7 +62,7 @@ function events.TICK()
 	ears.doEarFlick = earFlick.curr
 	
 	-- Control lean based on resting
-	for i in ipairs(head.strength) do
+	for i = 1, #head.strength do
 		head.strength[i] = anims.resting:isPlaying() and -headStrength[i] or headStrength[i]
 	end
 	head.tilt = anims.resting:isPlaying() and -headTilt or headTilt
@@ -76,7 +76,9 @@ function events.RENDER(delta, context)
 	
 	-- Offset smooth torso in various parts
 	-- Note: acts strangely with `parts.group.body`
-	for _, group in ipairs(parts.group.UpperBody:getChildren()) do
+	local bodyChildren = parts.group.UpperBody:getChildren()
+	for i = 1, #bodyChildren do
+		local group = bodyChildren[i]
 		if group ~= parts.group.Body then
 			group:rot(-calculateParentRot(group:getParent()))
 		end

@@ -95,7 +95,8 @@ function events.TICK()
 	local sleep = pose.sleep
 	
 	-- Reset idle anims
-	for i, anim in ipairs(idles) do
+	for i = 1, #idles do
+		local anim = idles[i]
 		if anim:isPlaying() and i ~= idleStyle.curr and not (anim == anims.flying and flying) then
 			anim:stop()
 		end
@@ -190,7 +191,8 @@ function events.RENDER(delta, context)
 	parts.group.RightArm:offsetRot((getOriginRot("RIGHT_ARM", delta) - idleRot) * rightArmLerp.currPos)
 	
 	-- Parrot rot offset
-	for _, parrot in pairs(parrots) do
+	for i = 1, #parrots do
+		local parrot = parrots[i]
 		parrot:rot(-calculateParentRot(parrot:getParent()) - getOriginRot("BODY", delta))
 	end
 	
@@ -221,7 +223,8 @@ local blendAnims = {
 }
 
 -- Apply GS Blending
-for _, blend in ipairs(blendAnims) do
+for i = 1, #blendAnims do
+	local blend = blendAnims[i]
 	if blend.anim ~= nil then
 		blend.anim:blendTime(table.unpack(blend.ticks)):blendCurve("easeOutQuad")
 	end
