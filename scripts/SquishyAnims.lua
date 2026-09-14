@@ -94,7 +94,7 @@ if not host:isHost() then return end
 
 -- Required scripts
 local s, pageNav, acts, colors = pcall(require, "scripts.ActionWheel")
-if not s then return end -- Kills script early if ActionWheel.lua isnt found
+if not s then return end -- Kills script early if ActionWheel.lua isn't found
 pcall(require, "scripts.Anims") -- Tries to find script, not required
 
 -- Check for if page already exists
